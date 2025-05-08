@@ -1,0 +1,116 @@
+body {
+    width: 580px;
+}
+
+div.blog {
+    width: 100%;
+    font-family: KaiTi;
+    font-size: 16px;
+    text-indent: 32px;
+    color: black;
+}
+
+p.title {
+    font-weight: bold;
+    font-size: 24px;
+    font-family: SimSun;
+    text-align: center;
+    text-indent: 0px;
+    color: #800000;
+}
+
+p.sub-title {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: SimSun;
+    text-align: center;
+    text-indent: 0px;
+    color: rgb(2, 130, 150)
+}
+
+p.date {
+    font-size: 10pt;
+    color: #999999;
+    text-align: center;
+    text-indent: 0px;
+}
+
+img.title {
+    float: right;
+    height: 60px;
+    border-style: hidden;
+}
+
+img.index {
+    width:100%;
+}
+
+p.paragraph {
+    font-family: KaiTi;
+    font-size: 16px;
+    text-indent: 32px;
+}
+
+p.note {
+    color: grey;
+    font-size: 12px;
+}
+
+p.date-title {
+    font-family: Times;
+    font-size:16px;
+    font-weight: bold;
+}
+
+p.quote {
+    font-family: SimSun;
+    font-size:14px;
+}
+
+p.latin {
+    font-family: Times;
+}
+
+span.ref {
+    font-size: 17px;
+    color: blue;
+}
+
+span.link {
+    font-size: 10px;
+}
+
+span.latin {
+    font-family: Times;
+}
+
+span.quote {
+    font-family: SimSun;
+    font-size:16px;
+    color:blue;
+}
+
+img.image-left {
+	display: inline;
+	float: left;
+	margin: 4px 20px 0px 8px;
+    border:0px;
+}
+
+img.image-right {
+	display: inline;
+	float: right;
+	margin: 4px 8px 0px 20px;
+    border:0px;
+}
+
+img.image-center {
+	display: block;
+	margin: 6px auto 20px auto;
+    border:0px;
+}
+
+ol.list {
+    margin-left: 24px;
+    text-indent: 0px
+}
