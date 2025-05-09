@@ -12,3 +12,6 @@ footer.addEventListener("click", () => {
     window.location.hash = '#home/home';
 });
 
+if (window.self !== window.top) {
+    document.getElementById("page-footer").style.display = "none";
+}
