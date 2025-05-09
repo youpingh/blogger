@@ -15,3 +15,4 @@ footer.addEventListener("click", () => {
 if (window.self !== window.top) {
     document.getElementById("page-footer").style.display = "none";
 }
+console.log(window.self, window.top);

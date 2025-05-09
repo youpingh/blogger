@@ -1,12 +1,562 @@
+<!doctype html>
+<html>
 
-  <!-- Loads the page content dynamically into the "page-content" tag -->
+<head>
+  <meta charset="UTF-8">
+  <title>博客目录</title>
+  <style>
+    table.content {
+      font-family: SimSun;
+      font-size: 16px;
+      width: 600px;
+      border-collapse: collapse;
+      border: 0;
+      padding: 2px;
+    }
+
+    td.title {
+      width: 140px;
+      font-family: KaiTi;
+      font-size: 13px;
+    }
+
+    td.intro {
+      font-family: SimSun;
+      font-size: 13px;
+    }
+
+    td.category-index {
+      font-family: SimSun;
+      font-size: 20px;
+      font-weight: bold;
+      color: #034c79;
+      padding-top: 25px;
+    }
+
+    h2.blog-index {
+      font-family: SimSun;
+      font-size: 24px;
+      font-weight: bold;
+      color: #034c79;
+      padding-top: 25px;
+      text-align: center;
+      text-indent: 0px;
+    }
+
+    img.category {
+      width: 40px;
+      border: 0;
+      margin-left: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    a.color {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
   <div id="home">
-    <p>Here is the blog index.</p>
-    <p><a href="#afanti2/卸甲归田/退休第一天">退休第一天</a></p>
-  </div>
+    <h2 class="blog-index">博客目录</h2>
+    <hr />
+    <table class="content">
+      <tbody>
+        <tr>
+          <td>
+            <img class="category" src="../images/icons/reading.jpg" />
+          </td>
+          <td class="category-index">字里行间</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/读《人类简史》'>·读《人类简史》</a>
+          </td>
+          <td class="intro">从不同渠道听说过这本书，好评居多</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/读《未来简史》'>·读《未来简史》</a>
+          </td>
+          <td class="intro">生化技术和AI带来的新危机，而对这些问题，作者没有答案</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/消遣瘟疫'>·消遣瘟疫</a>
+          </td>
+          <td class="intro">宅在家里，看看小说，消遣瘟疫，其乐也融融</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/书山有路'>·书山有路</a>
+          </td>
+          <td class="intro">我的新年愿望一般只有一条，每月读一本新书</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/读《论美国的民主》'>·读《论美国的民主》</a>
+          </td>
+          <td class="intro">贵族大概会以另外一种途径产生，不会吗？</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/京字京韵'>·京字京韵</a>
+          </td>
+          <td class="intro">听起来好像有点儿凄凉，其实并不尽然</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/旅行者-旅游者'>·旅行者 - 旅游者</a>
+          </td>
+          <td class="intro">在书中看到的一切如同离轨的卫星，迷茫而失落，孤独和挣扎</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/那些事儿'>·那些事儿</a>
+          </td>
+          <td class="intro">从容、饶有兴致地把从三皇五帝到蒋公毛爷的那些事儿都捋了一遍</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/从景福阁到老县城'>·从景福阁到老县城</a>
+          </td>
+          <td class="intro">穿着一袭素色旗袍，举手投足优雅沉静，款款地从历史深处走出来</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/老大哥正在看着你'>·老大哥正在看着你</a>
+          </td>
+          <td class="intro">看着《一九八四》正在中国变成现实，心里总有一种无以名状的恐惧</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/读《心理学的故事》'>·读《心理学的故事》</a>
+          </td>
+          <td class="intro">所以到现在，一年多了，还处在库伯勒-罗丝心理模型的第一阶段里</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/闲读圣经'>·闲读圣经</a>
+          </td>
+          <td class="intro">如果把圣经当历史读的话，神的一瓢水，杀人100%</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/朝闻道'>·朝闻道</a>
+          </td>
+          <td class="intro">“你不知道？” “我怎么知道。”</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/再读《三体》'>·再读《三体》</a>
+          </td>
+          <td class="intro">一个新词：降维打击，现在常被人使用</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/她和祂'>·她和祂</a>
+          </td>
+          <td class="intro">神聊的“神”字是不是应该这么解释？</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/自废武功'>·自废武功</a>
+          </td>
+          <td class="intro">就像作者说的，在不断地“自废武功”</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/不响'>·不响</a>
+          </td>
+          <td class="intro">这个不响，颇有些不同凡响的味道</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/二加二等于五'>·二加二等于五</a>
+          </td>
+          <td class="intro">那<span class='latin'> DNA </span>呢？很明显是一种智慧代码的载体，谁造的？</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/渐行渐远的传统'>·渐行渐远的传统</a>
+          </td>
+          <td class="intro">一身正气，两袖清风正在慢慢变成过时的传统，逐渐成为历史书里的词汇</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/读书随笔'>·读书随笔</a>
+          </td>
+          <td class="intro">最近读书相当杂，总是顺手拿起一本就看下去了</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/字里行间/读《纳粹猎人》'>·读《纳粹猎人》</a>
+          </td>
+          <td class="intro">想起来多年前曾听到过艾希曼在阿根廷被绑架的事情</td>
+        </tr>
 
-  <!-- Load the main JavaScript as a module -->
-  <script type="module" src="./scripts/app.js"></script>
+
+        <tr>
+          <td>
+            <img class="category" src="../images/icons/thoughts.jpg" />
+          </td>
+          <td class="category-index">嬉笑怒骂</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/川普怼'>·川普怼</a>
+          </td>
+          <td class="intro">多亏是多年的老朋友了，要不然非打起来不成</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/神的逻辑'>·神的逻辑</a>
+          </td>
+          <td class="intro">一万光年以后，也不会变，结果引来一片笑声</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/听相声'>·听相声</a>
+          </td>
+          <td class="intro">幽默的人能笑，我们跟着他笑；假充幽默的小花脸可笑，我们对着他笑</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/五环'>·五环 ……</a>
+          </td>
+          <td class="intro">小岳岳要是能继续火下去的话，肯定还有机会唱“它比十环少五环”</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/由此及彼'>·由此及彼</a>
+          </td>
+          <td class="intro">这和共和党，民主党，有半毛钱的关系吗？！</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/前总统的余热'>·前总统的余热</a>
+          </td>
+          <td class="intro">卡特在2020年之前，一直保持着美国历史上最差总统的头衔</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/民愚'>·民愚</a>
+          </td>
+          <td class="intro">自下而上反向的，官不愚民民自愚，不像是个好兆头</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/牛x在前头'>·牛x在前头</a>
+          </td>
+          <td class="intro">一头雾水地说：谁说话带脏字了？</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/咸吃萝卜淡操心'>·咸吃萝卜淡操心</a>
+          </td>
+          <td class="intro">川黑、川粉们为吗非要现在把脑浆子打出来呀？真是咸吃萝卜淡操心</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/川普再怼'>·川普再怼</a>
+          </td>
+          <td class="intro">但有一点是肯定的：不选川普</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/蝌蚪'>·蝌蚪</a>
+          </td>
+          <td class="intro">不出意外的话，《蝌蚪》将使莫言同学重返诺奖颁奖台</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/万岁考'>·万岁考</a>
+          </td>
+          <td class="intro">最后，让我们共同敬祝，…… ……</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/运动了'>·运动了</a>
+          </td>
+          <td class="intro">MAGA, MAGA! 美国够伟大了，让大家过几天清静日子不好吗？</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/嬉笑怒骂/紧箍咒'>·紧箍咒</a>
+          </td>
+          <td class="intro">AI 正在以一种让人不寒而栗的方式进入中国的一些小学教室</td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <img class="category" src="../images/icons/gossip.jpg" />
+          </td>
+          <td class="category-index">道听途说</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·路边的洋娃娃</a>
+          </td>
+          <td class="intro">还有很多年轻的女性干脆连结婚的愿望都放弃了</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·又涨价了</a>
+          </td>
+          <td class="intro">这位美国历史上第二差的总统，在任期中至少做了一件不差的事</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·人多手杂</a>
+          </td>
+          <td class="intro">年轻人花大量的时间泡在网上看黄片，所以就少生孩子</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·毛将焉附</a>
+          </td>
+          <td class="intro">真可惜呀，怎么从来就没人冒叫一声：谁是毛呀？你才是毛呢！</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·傻瓜机器人</a>
+          </td>
+          <td class="intro">机器人一点都不傻，是你傻，特傻！</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·智者三虑</a>
+          </td>
+          <td class="intro">可 AI 要是闹起来，上哪找它的上帝去呀？</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·孰荤孰素</a>
+          </td>
+          <td class="intro">吃鸡蛋时会不会觉得自己已经是个残忍的，杀鸡不眨眼的凶手啦？</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·男右女左</a>
+          </td>
+          <td class="intro">现在呢，可能应该说：时代不同了，男女又开始不一样了</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/道听途说/退休第一天'>·后怕</a>
+          </td>
+          <td class="intro">躺着都能中枪，真是那么回事</td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="category" src="../images/icons/moments.jpg" />
+          </td>
+          <td class="category-index">林林总总</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·疼</a>
+          </td>
+          <td class="intro">疼分十等，肾结石，仅次于生孩子，九等</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·雕虫小技</a>
+          </td>
+          <td class="intro">最好还要图文并茂，有声有色</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·“群”论</a>
+          </td>
+          <td class="intro">从信息交换的角度看，朋友圈就像一道私人订制的防火墙</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·两宫京剧</a>
+          </td>
+          <td class="intro">于会泳在政治上的失意，导致了他的音乐再无市场</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·那些年听过的故事</a>
+          </td>
+          <td class="intro">你要是熟悉孙敬修这个名字的话，别说，会暴露年龄的</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·这些年听过的故事</a>
+          </td>
+          <td class="intro">听有知识的人说话，还是挺有意思的</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·那些年听过的歌(上)</a>
+          </td>
+          <td class="intro">唱得相当动情，下面听众中的同龄人也为之动容</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·那些年听过的歌(中)</a>
+          </td>
+          <td class="intro">很久很久没听过这么轻柔的歌声和这么直白的爱情表达了</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·那些年听过的歌(下)</a>
+          </td>
+          <td class="intro">那不是传说中的歌神，那就是活生生的几个歌神</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·这些年听过的歌</a>
+          </td>
+          <td class="intro">然后用很不屑的眼光看了看他说：“你不知道刀郎？”</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·漫漫公文路</a>
+          </td>
+          <td class="intro">办理三级认证要分三步走：地方公证，州务卿认证，领馆认证</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·用脚踢的足球</a>
+          </td>
+          <td class="intro">兴奋之余，想起一些和足球有关的趣事</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·纯净水</a>
+          </td>
+          <td class="intro">一上来就是四十多度的伏特加。生生地在毫不知情的情况下被破了处</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·轻快的狐狸</a>
+          </td>
+          <td class="intro">看了一眼，那几个字我认得</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·怕</a>
+          </td>
+          <td class="intro">和病痛缠身比起来，担惊受怕，也不好受</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·从科幻到现实</a>
+          </td>
+          <td class="intro">感情是人类的专属，作为一个机器人，永远不许踏入人类的感情</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/林林总总/退休第一天'>·捧着</a>
+          </td>
+          <td class="intro">这回是个小子，而且这回我没捧着</td>
+        </tr>
+
+        <tr>
+          <td>
+            <img class="category" src="../images/icons/calligraphy.jpg" />
+          </td>
+          <td class="category-index">横竖撇捺</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/横竖撇捺/退休第一天'>·横平竖直</a>
+          </td>
+          <td class="intro">有些功夫就是磨出来的，急于求成只会事倍功半</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/横竖撇捺/退休第一天'>·一年以后</a>
+          </td>
+          <td class="intro">转眼一年过去了，每天写一百字，乐在其中</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/横竖撇捺/退休第一天'>·汉隶唐楷</a>
+          </td>
+          <td class="intro">怪不得小孩子练书法，要从隶书开始</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/横竖撇捺/退休第一天'>·心平气和</a>
+          </td>
+          <td class="intro">字写得多好不是最重要的，写更重要</td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <img class="category" src="../images/icons/retirement1.jpg" />
+          </td>
+          <td class="category-index">卸甲归田</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/退休第一天'>·退休第一天</a>
+          </td>
+          <td class="intro">触景生情，脑子里浮出来的就是两句毛诗</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/又退休了一回'>·又退休了一回</a>
+          </td>
+          <td class="intro">头儿笑了笑说：我尽力了，你好好干活吧。</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/1米6，63，能退休吗'>·1米6，63，能退吗？</a>
+          </td>
+          <td class="intro">1米6，63，能退休吗？看来没有个标准答案</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/能退休，退吗'>·能退休，退吗？</a>
+          </td>
+          <td class="intro">这个心态要是不调整好，退休以后问题很大</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/决定退休了，什么时候退'>·要退，什么时候退？</a>
+          </td>
+          <td class="intro">说了两回退休的事，好像还没说完，再聊聊</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/地狱考'>·“地狱”考</a>
+          </td>
+          <td class="intro">找个平台，着三不着两地码几行字。其乐也融融</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/攒钱养老'>·攒钱养老</a>
+          </td>
+          <td class="intro">存钱养老很重要，先得从有耐心等那第二颗棉花糖做起</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/又开工了'>·又开工了</a>
+          </td>
+          <td class="intro">小孙女用她的小手不厌其烦地点屏幕上那个小喇叭，真有点儿意思</td>
+        </tr>
+        <tr>
+          <td class="title">
+            <a class='color' href='#afanti2/卸甲归田/开工日志'>·开工日志</a>
+          </td>
+          <td class="intro">爷爷，咱们来玩那个“字儿”的游戏吧</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <hr />
+  </div>
 </body>
 
 </html>
