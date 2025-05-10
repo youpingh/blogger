@@ -9,6 +9,7 @@ div.blog {
     font-size: 16px;
     text-indent: 32px;
     color: black;
+    margin-bottom: 50px;
 }
 
 p.title {
@@ -114,4 +115,16 @@ img.image-center {
 ol.list {
     margin-left: 24px;
     text-indent: 0px
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 600px;
+	height: 40px;
+    color: white;
+    text-indent: 32px;
+	background-color: rgb(68, 68, 68);
+	opacity: 0.5;
 }

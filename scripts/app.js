@@ -10,6 +10,10 @@ window.addEventListener("DOMContentLoaded", Loader.loadPage);
 let footer = document.getElementById('page-footer');
 footer.addEventListener("click", () => {
     window.location.hash = '#home/home';
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Optional: adds a smooth scrolling animation
+    });
 });
 
 if (window.self !== window.top) {
