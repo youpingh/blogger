@@ -27,7 +27,7 @@ export class Loader {
         .then(response => response.text())
         .then(data => page.innerHTML = data)
         .catch(error => console.error("Error loading page:", error));
-      console.log(pageName, 'is loaded');
+      // console.log(pageName, 'is loaded');
     } catch (err) {
       console.error(err);
     }
