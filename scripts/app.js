@@ -1,4 +1,5 @@
 import { Loader } from './Loader.js';
+import { Code } from './Code.js';
 
 /**
  * Sets some globally used event listeners.
@@ -17,6 +18,7 @@ footer.addEventListener("click", () => {
 });
 
 if (window.self !== window.top) {
-    document.getElementById("page-footer").style.display = "none";
+    let footer = document.getElementById("footer");
+    footer.remove();
 }
 // console.log(window.self, window.top);

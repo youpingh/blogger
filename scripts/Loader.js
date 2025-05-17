@@ -19,7 +19,7 @@ export class Loader {
   static async loadPage() {
 
     // the full window.location.hash looks like this #blogger/label/title
-    let pageName = (window.location.hash.replace("#", "") || 'home/home') + '.html';
+    const pageName = (window.location.hash.replace("#", "") || 'home/home') + '.html';
     let page = document.getElementById('page-content');
 
     try {
@@ -31,5 +31,14 @@ export class Loader {
     } catch (err) {
       console.error(err);
     }
+
+    // if (pageName.startsWith('home')) {
+    //   let genIframe = document.getElementById("genIframe");
+    //   genIframe.addEventListener("click", () => {
+    //     Code.genIframe();
+    //   });
+    // }
+    let idx = document.getElementById('blog-index');
+    if (idx) idx.style.display = 'none';
   }
 }
