@@ -69,6 +69,18 @@ export class Code {
     // <iframe src="https://youpingh.github.io/blogger/#afanti2/卸甲归田/退休第一天" style='width:600px; height:480px;' frameborder="0"></iframe>
     return iframeAttr;
   }
+
+  /**
+   * Shows the generated iFrame elements
+   */
+  static showIframes() {
+    let element = document.getElementById('iframe-elements');
+    if (element.style.display == 'block') {
+      element.style.display = 'none';
+    } else {
+      element.style.display = 'block';
+    }
+  }
 }
 
 window.Code = Code;

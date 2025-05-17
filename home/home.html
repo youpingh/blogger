@@ -558,13 +558,14 @@
 
     <!-- for generating iFrame elements -->
     <p class="gen-code">
-      <span class="fa-solid fa-book-open"></span><span  onclick="Code.genIframe()"> Update iFrame Elements</span>
-      <span class="fa-solid fa-book-open"></span> Show Elements</p>
-    <table class="no-show">
+      <span class="fa-solid fa-book-open"></span><span onclick="Code.genIframe()"> Update iFrame Elements</span>
+      <span class="fa-solid fa-book-open"></span><span onclick="Code.showIframes()"> Show Elements</span>
+    </p>
+    <table id='iframe-elements' class="no-show">
       <tbody>
         <tr>
-          <td></td>
-          <td></td>
+          <td>a</td>
+          <td>b</td>
         </tr>
       </tbody>
     </table>
