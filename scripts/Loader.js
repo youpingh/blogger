@@ -31,13 +31,6 @@ export class Loader {
     } catch (err) {
       console.error(err);
     }
-
-    // if (pageName.startsWith('home')) {
-    //   let genIframe = document.getElementById("genIframe");
-    //   genIframe.addEventListener("click", () => {
-    //     Code.genIframe();
-    //   });
-    // }
     let idx = document.getElementById('blog-index');
     if (idx) idx.style.display = 'none';
   }

@@ -20,7 +20,8 @@ export class Code {
   static async genIframe() {
 
     const idx = document.getElementsByTagName('a');
-    let href, pageName, start, blogTitle;
+    let attributes = [];
+    let href, pageName, start, blogTitle, attr;
     let page = document.getElementById('page-content');
     let pageCode = page.innerHTML;
     for (let i = 0; i < idx.length; i++) {
@@ -36,9 +37,12 @@ export class Code {
       } catch (err) {
         console.error(err);
       }
-      Code.getDocHeight(pageName, blogTitle);
+      attr = Code.genarateAttributes(pageName, blogTitle);
+      attributes.push(attr);
       page.innerHTML = pageCode;
     }
+
+    // update the blogger code element
   }
 
   /**
@@ -46,7 +50,7 @@ export class Code {
    * @param {*} pageName 
    * @param {*} blogTitle 
    */
-  static getDocHeight(pageName, blogTitle) {
+  static genarateAttributes(pageName, blogTitle) {
     const pageUrl = decodeURI(pageName);
     const body = document.body;
     const html = document.documentElement;
@@ -54,9 +58,16 @@ export class Code {
     const height = Math.max(body.scrollHeight, body.offsetHeight,
       html.clientHeight, html.scrollHeight, html.offsetHeight);
 
+    const iframeAttr = {
+      title: blogTitle,
+      src: `<iframe src="https://youpingh.github.io/blogger/#${pageUrl}"`,
+      width: 600,
+      height: height
+    }
     const iframe = `<iframe src="https://youpingh.github.io/blogger/#${pageUrl}" style='width:600px; height:${height}px;' frameborder="0"></iframe>`;
     console.log(blogTitle, iframe);
-    // <iframe src="https://youpingh.github.io/blogger/#afanti2/卸甲归田/退休第一天" style='width:600px; height:480px; '  frameborder="0"'></iframe>
+    // <iframe src="https://youpingh.github.io/blogger/#afanti2/卸甲归田/退休第一天" style='width:600px; height:480px;' frameborder="0"></iframe>
+    return iframeAttr;
   }
 }
 

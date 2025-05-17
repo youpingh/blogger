@@ -117,6 +117,17 @@ ol.list {
     text-indent: 0px
 }
 
+.gen-code {
+    font-family: Times;
+    font-size: 16px;
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.no-show {
+    display: none;
+}
+
 .footer {
 	position: fixed;
 	left: 0;
