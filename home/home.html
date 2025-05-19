@@ -557,18 +557,21 @@
     <hr />
 
     <!-- for generating iFrame elements -->
-    <p class="gen-code">
-      <span class="fa-solid fa-book-open"></span><span onclick="Code.genIframe()"> Update iFrame Elements</span>
-      <span class="fa-solid fa-book-open"></span><span onclick="Code.showIframes()"> Show Elements</span>
-    </p>
-    <table id='iframe-elements' class="no-show">
-      <tbody>
-        <tr>
-          <td>a</td>
-          <td>b</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- TODO local only (e.g. 127.0.0.0)-->
+    <div id="code" class="code-table">
+      <p class="gen-code">
+        <span class="fa-solid fa-book-open"></span><span onclick="AppUtils.genIframe()"> Update iFrame Elements</span>
+        <span class="fa-solid fa-book-open"></span><span onclick="AppUtils.showIframes()"> Show Elements</span>
+      </p>
+      <table id='iframe-elements'>
+        <tbody>
+          <tr>
+            <td>a</td>
+            <td>b</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <br /><br />
   </div>
 </body>

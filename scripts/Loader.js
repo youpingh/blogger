@@ -1,4 +1,6 @@
 
+import { AppUtils } from './AppUtils.js';
+
 /**
  * This is loader utility to load a content page based on the value of the window.location.hash.
  */
@@ -31,7 +33,7 @@ export class Loader {
     } catch (err) {
       console.error(err);
     }
-    let idx = document.getElementById('blog-index');
-    if (idx) idx.style.display = 'none';
+    AppUtils.adjustFooter();
+    AppUtils.showCodeGenerator();
   }
 }

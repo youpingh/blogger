@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+	<script type="text/javascript">
+
+		var labelItems = []; // {id, posts[]}
+
+		function postList(json) {
+			if (json.feed.hasOwnProperty('entry')) {
+				var label = json.feed.entry[0].category[0].term.toString();
+				var labelItem = createLabelItem(label, json);
+				var numItems = labelItem.posts.length;
+				this.labelItems.push(labelItem);
+
+				if (label == '开卷有益') {
+					document.write('<p style="font-family:KaiTi; font-weight:bold; color: brown;">那前儿 (2009 - 2011)</p>');
+				}
+				if (label == '字里行间') {
+					document.write('<p style="font-family:KaiTi; font-weight:bold; color: brown;">眼下 (2020 - )</p>');
+				}
+				var func = "showPostLabels('" + label + "')";
+				var pid = "p-" + label;
+				document.write('<p id="' + pid + '" title="Click to expand/hide" onclick="' + func +
+					'" style="font-family:SimSun; font-weight:bold; color: rgb(77, 77, 77);">+ ' +
+					label + '(' + numItems + ')</p>');
+				document.write('<ul id="' + label + '" style="font-family:SimSun; font-size:10px; padding-left: 20px;"></ul>');
+				if (label == '字里行间' || label == '林林总总') {
+					showPostLabels(label);
+				}
+			}
+		}
+
+		/**
+		 * Creates a label item list (id: label, posts[])
+		 */
+		function createLabelItem(label, json) {
+			var posts = [];
+			var entryUrl, entryTitle, item;
+			// for (var i = 0; i < json.feed.entry.length; i++) {
+			for (var i = json.feed.entry.length - 1; i >= 0; i--) {
+				for (var j = 0; j < json.feed.entry[i].link.length; j++) {
+					if (json.feed.entry[i].link[j].rel == 'alternate') {
+						break;
+					}
+				}
+				entryUrl = "'" + json.feed.entry[i].link[j].href + "'";
+				entryTitle = json.feed.entry[i].title.$t;
+				item = "<a style='text-decoration: none;' href=" + entryUrl + '>' + entryTitle + "</a>";
+				posts.push(item);
+			}
+			var labelItem = { id: label, posts: posts };
+			return labelItem;
+		}
+
+		/**
+		 * Shows or hides the posts for the specified lable
+		 */
+		function showPostLabels(label) {
+			var p, pcode, pid, ul, li, liList;
+			pid = 'p-' + label;
+			p = document.getElementById(pid);
+			pcode = p.innerHTML;
+			ul = document.getElementById(label);
+			liList = ul.getElementsByTagName("li");
+			if (liList.length > 0) {
+				pcode = pcode.replace('- ', '+ ');
+				p.innerHTML = pcode;
+				ul.innerHTML = '';
+				return;
+			}
+
+			ul.innerHTML = '';
+			var labelItem = this.labelItems.find(item => item.id === label);
+			for (var i = labelItem.posts.length - 1; i >= 0; i--) {
+				pcode = pcode.replace('+ ', '- ');
+				p.innerHTML = pcode;
+				li = document.createElement("li");
+				li.innerHTML = labelItem.posts[i];
+				ul.appendChild(li);
+			}
+		}
+	</script>
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/字里行间?max-results=50&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/林林总总?max-results=30&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/嬉笑怒骂?max-results=20&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/道听途说?max-results=20&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/横竖撇捺?max-results=15&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/卸甲归田?max-results=10&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/开卷有益?max-results=50&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/偶有一得?max-results=50&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/朝九晚五?max-results=20&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/弦外之音?max-results=20&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/行万里路?max-results=20&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/陈年往事?max-results=15&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/闲听百家?max-results=15&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://huyandi.blogspot.com/feeds/posts/summary/-/码字练习?max-results=15&alt=json-in-script&callback=postList">
+		</script>
+
+
+</head>
+
+</html>

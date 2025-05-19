@@ -128,6 +128,12 @@ ol.list {
     display: none;
 }
 
+.code-table {
+    width: 280%;
+    font-size:14px;
+    display: none;
+}
+
 .footer {
 	position: fixed;
 	left: 0;
