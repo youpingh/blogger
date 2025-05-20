@@ -155,6 +155,10 @@ export class AppUtils {
         });
       });
     }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   /**
@@ -170,6 +174,7 @@ export class AppUtils {
       footer.style.display = 'none';
       // console.log(document.body.innerHTML);
     } else {
+      footer.style.display = 'block';
       if (code)
         code.style.display = 'none';
     }
