@@ -46,7 +46,7 @@ export class AppUtils {
       page.innerHTML = pageCode;
     }
 
-    // TODO update the iFrame elements table
+    // update the iFrame elements table
     let table = document.getElementById('iframe-elements');
     table.innerHTML = '';
     let tbody = document.createElement('tbody');
@@ -99,14 +99,14 @@ export class AppUtils {
 
     const height = Math.round((Math.max(body.scrollHeight, body.offsetHeight,
       html.clientHeight, html.scrollHeight, html.offsetHeight)) * 1.10);
-    
 
+    const github = 'https://youpingh.github.io/'
     const iframeAttr = {
       title: blogTitle,
-      src: `https://youpingh.github.io/#${pageUrl}`,
+      src: `${github}#${pageUrl}`,
       width: 600,
-      height:height,
-      iframe: `<iframe src="https://youpingh.github.io/#${pageUrl}" style='width:600px; height:${height}px;' frameborder="0"></iframe>`
+      height: height,
+      iframe: `<iframe src="${github}#${pageUrl}" style='width:600px; height:${height}px;' frameborder="0"></iframe>`
     }
     // console.log(blogTitle, iframeAttr.iframe);
     return iframeAttr;
@@ -129,16 +129,22 @@ export class AppUtils {
    */
   static adjustFooter() {
     const utils = AppUtils.getInstance();
-    const origin = window.self.location.ancestorOrigins[0];
-    const isCreader = (origin && origin == utils.creader);
+    const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+
+    let origin = utils.blogger;
+    if (!isFirefox) {
+      origin = window.location.ancestorOrigins[0]; // TODO Firefox doesn't support this property
+    }
+    let isCreader = (origin && origin == utils.creader);
     let footer = document.getElementById('page-footer');
+    console.log('origin:', origin, 'isCreader:', isCreader);
+
     if (window.self !== window.top) {
       footer.remove(); // remove the footer for both remove bloggers (creaders and Blogger)
       if (isCreader) { // add a blog index for creaders
         let blog = document.getElementsByClassName('blog')[0];
         blog.appendChild(utils.creaderIdx);
       }
-      // console.log(document.body.innerHTML);
     } else {
       // add a footer event listener for my blog
       footer.addEventListener("click", () => {
@@ -164,8 +170,8 @@ export class AppUtils {
       footer.style.display = 'none';
       // console.log(document.body.innerHTML);
     } else {
-      if (code) code.style.display = 'none';
-      footer.style.display = 'block';
+      if (code)
+        code.style.display = 'none';
     }
   }
 
