@@ -19,7 +19,36 @@ export class AppUtils {
   }
 
   /**
-   * Loads a blog according to the value of window.location.hash.
+   * TODO Adds 'click' event listeners to all the table of content images (home.html).
+   */
+  static addHomeListeners() {
+    if (window.location.hash.includes('home')) {
+      let icons = document.getElementsByClassName('category');
+      for (let i = 0; i < icons.length; i++) {
+        icons[i].addEventListener("click", () => {
+          AppUtils.showTOC(icons[i]);
+        });
+        AppUtils.showTOC(icons[i]);
+      }
+    }
+  }
+
+  /**
+   * Shows/hides a table of contents when it's image is clicked.
+   */
+  static showTOC(icon) {
+    const id = icon.dataset.id;
+    let table = document.getElementById(id);
+    const display = table.style.display;
+    if (!display || display == 'block') {
+      table.style.display = 'none';
+    } else {
+      table.style.display = 'block';
+    }
+  }
+
+  /**
+   * Generates a list of iFrame elements for other blogs to reference this blog.
    */
   static async genIframe() {
 

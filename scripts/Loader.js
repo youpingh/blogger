@@ -35,5 +35,6 @@ export class Loader {
     }
     AppUtils.adjustFooter();
     AppUtils.showCodeGenerator();
+    AppUtils.addHomeListeners();
   }
 }

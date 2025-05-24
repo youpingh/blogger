@@ -37,6 +37,16 @@ p.date {
     text-indent: 0px;
 }
 
+p.noindent {
+    text-indent: 0px;
+    font-size: 14px;
+    color: blue;
+}
+
+p.blue-text {
+    color: rgb(0, 33, 176);
+}
+
 img.title {
     float: right;
     height: 60px;
@@ -44,7 +54,7 @@ img.title {
 }
 
 img.index {
-    width:100%;
+    width: 100%;
 }
 
 p.paragraph {
@@ -60,17 +70,23 @@ p.note {
 
 p.date-title {
     font-family: Times;
-    font-size:16px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 p.quote {
     font-family: SimSun;
-    font-size:14px;
+    font-size: 14px;
 }
 
 p.latin {
     font-family: Times;
+}
+
+p.simsun-text {
+    font-family:SimSun; 
+    font-size: 16px; 
+    text-indent: 32px;
 }
 
 span.ref {
@@ -88,28 +104,33 @@ span.latin {
 
 span.quote {
     font-family: SimSun;
-    font-size:16px;
-    color:blue;
+    font-size: 16px;
+    color: blue;
+}
+
+span.tile-date {
+    font-size: 10pt;
+    color: #999999;
 }
 
 img.image-left {
-	display: inline;
-	float: left;
-	margin: 4px 20px 0px 8px;
-    border:0px;
+    display: inline;
+    float: left;
+    margin: 4px 20px 0px 8px;
+    border: 0px;
 }
 
 img.image-right {
-	display: inline;
-	float: right;
-	margin: 4px 8px 0px 20px;
-    border:0px;
+    display: inline;
+    float: right;
+    margin: 4px 8px 0px 20px;
+    border: 0px;
 }
 
 img.image-center {
-	display: block;
-	margin: 6px auto 20px auto;
-    border:0px;
+    display: block;
+    margin: 6px auto 20px auto;
+    border: 0px;
 }
 
 ol.list {
@@ -130,18 +151,19 @@ ol.list {
 
 .code-table {
     width: 280%;
-    font-size:14px;
+    font-size: 14px;
     display: none;
 }
 
 .footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 600px;
-	height: 40px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 600px;
+    height: 40px;
     color: white;
     text-indent: 32px;
-	background-color: rgb(68, 68, 68);
-	opacity: 0.5;
+    background-color: rgb(68, 68, 68);
+    opacity: 0.5;
+    cursor: pointer;
 }
