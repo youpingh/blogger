@@ -5,7 +5,16 @@
   <meta charset="UTF-8">
   <title>博客目录</title>
   <style>
-    /* Afanti2 styles */
+    body {
+      width: 720px;
+      background-color: transparent;
+    }
+
+    .toc {
+      width: 80%;
+      margin: auto;
+    }
+
     table.content {
       font-family: SimSun;
       font-size: 16px;
@@ -13,11 +22,12 @@
       border-collapse: collapse;
       border: 0;
       padding: 2px;
-      margin-top: -10px;
+      margin-top: -18px;
+      margin-bottom: 4px;
     }
 
     td.title {
-      width: 150px;
+      width: 27%;
       font-family: KaiTi;
       font-size: 13px;
     }
@@ -33,7 +43,8 @@
       font-size: 20px;
       font-weight: bold;
       color: #034c79;
-      padding-top: 25px;
+      padding-top: 20px;
+      cursor: pointer;
     }
 
     h2.blog-index {
@@ -63,14 +74,14 @@
 </head>
 
 <body>
-  <div id="home">
+  <div id="home" class="toc">
     <h2 class="blog-index">博客目录 （2020.4 -- ）</h2>
     <hr />
     <table class="content">
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='01' src="images/icons/reading.jpg" />
+            <img class="category" data-id='01' src="images/icons/reading.jpg" />
           </td>
           <td class="category-index">字里行间</td>
         </tr>
@@ -191,7 +202,7 @@
           <td class="title">
             <a class='color' href='#afanti2/字里行间/渐行渐远的传统'>·渐行渐远的传统</a>
           </td>
-          <td class="intro">一身正气，两袖清风正在慢慢变成过时的传统，逐渐成为历史书里的词汇</td>
+          <td class="intro">一身正气，两袖清风正在慢慢变成过时的传统，成为历史书里的词汇</td>
         </tr>
         <tr>
           <td class="title">
@@ -212,7 +223,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='02' src="images/icons/thoughts.jpg" />
+            <img class="category" data-id='02' src="images/icons/thoughts.jpg" />
           </td>
           <td class="category-index">嬉笑怒骂</td>
         </tr>
@@ -312,7 +323,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='03' src="images/icons/gossip.jpg" />
+            <img class="category" data-id='03' src="images/icons/gossip.jpg" />
           </td>
           <td class="category-index">道听途说</td>
         </tr>
@@ -382,7 +393,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='04' src="images/icons/moments.jpg" />
+            <img class="category" data-id='04' src="images/icons/moments.jpg" />
           </td>
           <td class="category-index">林林总总</td>
         </tr>
@@ -500,7 +511,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='05' src="images/icons/calligraphy.jpg" />
+            <img class="category" data-id='05' src="images/icons/calligraphy.jpg" />
           </td>
           <td class="category-index">横竖撇捺</td>
         </tr>
@@ -540,7 +551,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='06' src="images/icons/retirement1.jpg" />
+            <img class="category" data-id='06' src="images/icons/retirement1.jpg" />
           </td>
           <td class="category-index">卸甲归田</td>
         </tr>
@@ -615,7 +626,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='07' src="images/icons/book.jpg" />
+            <img class="category" data-id='07' src="images/icons/book.jpg" />
           </td>
           <td class="category-index">开卷有益</td>
         </tr>
@@ -703,7 +714,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='08' src="images/icons/music.jpg" />
+            <img class="category" data-id='08' src="images/icons/music.jpg" />
           </td>
           <td class="category-index">弦外之音</td>
         </tr>
@@ -807,7 +818,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='09' src="images/icons/family.jpg" />
+            <img class="category" data-id='09' src="images/icons/family.jpg" />
           </td>
           <td class="category-index">陈年往事</td>
         </tr>
@@ -895,7 +906,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='10' src="images/icons/road.jpg" />
+            <img class="category" data-id='10' src="images/icons/road.jpg" />
           </td>
           <td class="category-index">行万里路</td>
         </tr>
@@ -974,7 +985,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='11' src="images/icons/think.jpg" />
+            <img class="category" data-id='11' src="images/icons/think.jpg" />
           </td>
           <td class="category-index">偶有一得</td>
         </tr>
@@ -1133,7 +1144,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='12' src="images/icons/CodeMonkeyRight.jpg" />
+            <img class="category" data-id='12' src="images/icons/CodeMonkeyRight.jpg" />
           </td>
           <td class="category-index">朝九晚五</td>
         </tr>
@@ -1202,7 +1213,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='13' src="images/icons/writing.jpg" />
+            <img class="category" data-id='13' src="images/icons/writing.jpg" />
           </td>
           <td class="category-index">码字练习</td>
         </tr>
@@ -1305,7 +1316,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='14' src="images/icons/voices.jpg" />
+            <img class="category" data-id='14' src="images/icons/voices.jpg" />
           </td>
           <td class="category-index">闲听百家</td>
         </tr>
@@ -1359,7 +1370,7 @@
       <tbody>
         <tr>
           <td class="title">
-            <img class="category" title='展开' data-id='15' src="images/icons/blog.jpg" />
+            <img class="category" data-id='15' src="images/icons/blog.jpg" />
           </td>
           <td class="category-index">博客管理</td>
         </tr>

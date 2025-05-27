@@ -19,16 +19,25 @@ export class AppUtils {
   }
 
   /**
-   * TODO Adds 'click' event listeners to all the table of content images (home.html).
+   * Adds 'click' event listeners to all the table of content images (home.html).
    */
   static addHomeListeners() {
-    if (window.location.hash.includes('home')) {
+    const hash = window.location.hash;
+    if (hash.length == 0 || hash.includes('home')) {
       let icons = document.getElementsByClassName('category');
       for (let i = 0; i < icons.length; i++) {
+        icons[i].title = '展开目录';
         icons[i].addEventListener("click", () => {
           AppUtils.showTOC(icons[i]);
         });
         AppUtils.showTOC(icons[i]);
+      }
+      let descs = document.getElementsByClassName('category-index');
+      for (let i = 0; i < descs.length; i++) {
+        descs[i].title = '展开目录';
+        descs[i].addEventListener("click", () => {
+          AppUtils.showTOC(icons[i]);
+        });
       }
     }
   }
