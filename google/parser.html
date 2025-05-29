@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogger XML Post Modifier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    input,
+    button {
+      margin: 10px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+
+    #output {
+      max-width: 90%;
+      text-align: left;
+      background: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Blogger XML Post Modifier</h1>
+  <p>Upload your Blogger XML backup to add additional code to all posts:</p>
+  <input type="file" id="xmlFileInput" accept=".xml">
+  <button id="modifyButton" disabled>Add iFrames and Download</button>
+  <div id="output">No file loaded.</div>
+
+  <script>
+    const xmlFileInput = document.getElementById('xmlFileInput');
+    const modifyButton = document.getElementById('modifyButton');
+    const output = document.getElementById('output');
+
+    let xmlDoc = null;
+
+    // Enable modify button when file is loaded
+    xmlFileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (!file) {
+        output.textContent = 'No file selected.';
+        modifyButton.disabled = true;
+        return;
+      }
+
+      // Read the XML file
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const xmlString = e.target.result;
+          const parser = new DOMParser();
+          xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+
+          // Check for parsing errors
+          if (xmlDoc.documentElement.nodeName === 'parsererror') {
+            throw new Error('Invalid XML file.');
+          }
+
+          output.textContent = 'XML file loaded. Click "Add Footer and Download" to modify posts.';
+          modifyButton.disabled = false;
+        } catch (error) {
+          output.textContent = `Error parsing XML: ${error.message}`;
+          modifyButton.disabled = true;
+        }
+      };
+      reader.onerror = () => {
+        output.textContent = 'Error reading file.';
+        modifyButton.disabled = true;
+      };
+      reader.readAsText(file);
+    });
+
+    // Modify posts and download updated XML
+    modifyButton.addEventListener('click', () => {
+      if (!xmlDoc) {
+        output.textContent = 'No XML file loaded.';
+        return;
+      }
+
+      try {
+        output.textContent = 'Modifying posts...';
+        modifyButton.disabled = true;
+
+        // Get all <entry> elements
+        const entries = xmlDoc.getElementsByTagName('entry');
+        let postCount = 0;
+
+        for (let entry of entries) {
+          // Check if entry is a post
+          const categories = entry.getElementsByTagName('category');
+          let isPost = false;
+          for (let category of categories) {
+            const term = category.getAttribute('term');
+            if (term.includes('kind#post')) {
+              isPost = true;
+              break;
+            }
+          }
+
+          // Fallback: Check <id> for post
+          const id = entry.getElementsByTagName('id')[0]?.textContent || '';
+          if (!isPost && id.includes('.post-')) {
+            isPost = true;
+          }
+
+          // Modify post content
+          if (isPost) {
+            const contentElement = entry.getElementsByTagName('content')[0];
+            if (contentElement) {
+              // Get existing content and append footer
+              let content = contentElement.textContent || '';
+              content = "<iframe src='https://youpingh.github.io/blogger/#afanti2/字里行间/读《人类简史》' style='width: 600px; height: 925px;' frameborder='0'></iframe> ";
+              contentElement.textContent = content;
+              postCount++;
+            }
+          }
+        }
+
+        // Serialize updated XML
+        const serializer = new XMLSerializer();
+        const updatedXmlString = serializer.serializeToString(xmlDoc);
+
+        // Create downloadable file
+        const blob = new Blob([updatedXmlString], { type: 'application/xml' });
+        const url = URL.createObjectURL(blob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'modified-blog.xml';
+        downloadLink.textContent = 'Download Modified XML';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        URL.revokeObjectURL(url);
+
+        output.textContent = `Modified ${postCount} posts. Download the updated XML file.`;
+      } catch (error) {
+        output.textContent = `Error modifying XML: ${error.message}`;
+        modifyButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+
+</html>

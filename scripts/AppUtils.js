@@ -57,72 +57,168 @@ export class AppUtils {
   }
 
   /**
-   * Generates a list of iFrame elements for other blogs to reference this blog.
+   * Generates a list of iFrame code, save it to a JSON file, 
+   * and modify the Blogger's backup xml file with the generated code.
    */
-  static async genIframe() {
+  static async genIframeCode(event) {
+    const file = event.files[0];
+    if (!file) {
+      output.textContent = 'No file selected.';
+    } else {
+      AppUtils.iFrameCode(file.name);
+    }
+  }
 
-    const idx = document.getElementsByTagName('a');
+  /**
+   * Generates a list of iFrame code, save it to a JSON file, 
+   * and modify the Blogger's backup xml file with the generated code.
+   */
+  static async iFrameCode(file) {
+
+    let output = document.getElementById('output');
     let attributes = [];
-    let href, pageName, start, blogTitle, attr;
-    let page = document.getElementById('page-content');
-    let pageCode = page.innerHTML;
-    for (let i = 0; i < idx.length; i++) {
-      blogTitle = idx[i].textContent.substring(1);
-      href = idx[i].href;
-      start = href.indexOf('#') + 1;
-      pageName = href.substring(start);
-      try {
-        await fetch(pageName + '.html')
-          .then(response => response.text())
-          .then(data => page.innerHTML = data)
-          .catch(error => console.error("Error loading page:", error));
-      } catch (err) {
-        console.error(err);
+
+    try {
+      // get attributes for a iFrame code (title, url, width, height);
+      const idx = document.getElementsByTagName('a');
+      let href, pageName, start, blogTitle, attr;
+      let page = document.getElementById('page-content');
+      let pageCode = page.innerHTML;
+      for (let i = 0; i < idx.length; i++) {
+        blogTitle = idx[i].textContent.substring(1).replace(/\s+/g, "").trim();
+        href = idx[i].href;
+        start = href.indexOf('#') + 1;
+        pageName = href.substring(start);
+        console.log("loading", decodeURI(pageName));
+        try {
+          await fetch(pageName + '.html')
+            .then(response => response.text())
+            .then(data => page.innerHTML = data)
+            .catch(error => console.error("Error loading page:", error));
+        } catch (err) {
+          console.error("loading", decodeURI(pageName), 'failed', err);
+        }
+        attr = AppUtils.genarateAttributes(pageName, blogTitle);
+        attributes.push(attr);
+        page.innerHTML = pageCode;
       }
-      attr = AppUtils.genarateAttributes(pageName, blogTitle);
-      attributes.push(attr);
-      page.innerHTML = pageCode;
+      output.textContent = 'iFrame code is generated.';
+      console.log('iFrame code is generated.');
+
+      // save this to a JSON file for Creaders as it doesn't support batch update.
+      // create a download link to save the generated code to a JSON file.
+      let iFrameCode = 'export class AllFrames {\n	static ALL_FRAMES = Object.freeze(\n' +
+        JSON.stringify(attributes, null, 2) + ');}';
+
+      const blob = new Blob([iFrameCode], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.download = 'modified-blog.js';
+      downloadLink.textContent = 'Download Modified JSON';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      URL.revokeObjectURL(url);
+      output.textContent = 'iFrame code JSON file is saved.';
+      console.log('iFrame code JSON file is saved..');
+    } catch (error) {
+      console.error(error);
     }
 
-    // update the iFrame elements table
-    let table = document.getElementById('iframe-elements');
-    table.innerHTML = '';
-    let tbody = document.createElement('tbody');
-    let tr, td;
-    for (let i = 0; i < attributes.length; i++) {
-      tr = document.createElement('tr');
-      td = document.createElement('td');
-      td.textContent = attributes[i].title;
-      tr.appendChild(td);
-      td = document.createElement('td');
-      td.textContent = attributes[i].src;
-      tr.appendChild(td);
-      td = document.createElement('td');
-      td.textContent = attributes[i].width;
-      tr.appendChild(td);
-      td = document.createElement('td');
-      td.textContent = attributes[i].height;
-      tr.appendChild(td);
-      td = document.createElement('td');
-      td.textContent = attributes[i].iframe;
-      tr.appendChild(td);
-      tbody.appendChild(tr);
+    // update the Blooger's backup xml file with the generated iFrame code.
+    let xmlDoc = null
+    let xmlString = null;
+    try {
+      // Read the XML file
+      file = '../google/' + file;
+      await fetch(file)
+        .then(response => response.text())
+        .then(data => xmlString = data)
+        .catch(error => console.error("Error loading XML:", error));
+      console.log('Loaded the Blogger backup XML file.');
+    } catch (error) {
+      output.textContent = `Error reading XML: ${error.message}`;
     }
-    table.appendChild(tbody);
 
-    /*
-      <table id='iframe-elements' class="no-show">
-        <tbody>
-          <tr>
-            <td>title</td>
-            <td>src</td>
-            <td>width</td>
-            <td>height</td>
-            <td>iframe</td>
-          </tr>
-        </tbody>
-      </table>
-    */
+    try {
+      const parser = new DOMParser();
+      xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+
+      // Check for parsing errors
+      if (xmlDoc.documentElement.nodeName === 'parsererror') {
+        throw new Error('Invalid XML file.');
+      }
+
+      output.textContent = 'XML file parsed.';
+      console.log('Parsed the Blogger backup XML file.');
+    } catch (error) {
+      output.textContent = `Error parsing XML: ${error.message}`;
+    }
+
+    try {
+      // Get all <entry> elements
+      const entries = xmlDoc.getElementsByTagName('entry');
+      let postCount = 0;
+
+      for (let entry of entries) {
+        // Check if entry is a post
+        const categories = entry.getElementsByTagName('category');
+        let isPost = false;
+        for (let category of categories) {
+          const term = category.getAttribute('term');
+          if (term.includes('kind#post')) {
+            isPost = true;
+            break;
+          }
+        }
+
+        // Modify post content
+        const title = entry.getElementsByTagName('title')[0]?.textContent || '(No title)';
+        if (isPost) {
+          let contentElement = entry.getElementsByTagName('content')[0];
+          let content = '';
+          if (contentElement) {
+            // Get existing content and append the generated code
+            content = attributes.find(item => item.title == title);
+            if (content) {
+              contentElement.textContent = content.iframe;
+              postCount++;
+            } else {
+              console.log('Not in the list:', title);
+            }
+          }
+        } else {
+          console.log('Not a post:', title);
+        }
+      }
+      console.log('Updated the Blogger backup XML file:', postCount, 'posts.');
+    } catch (error) {
+      output.textContent = `Error parsing XML: ${error.message}`;
+    }
+
+    try {
+      // Serialize updated XML
+      const serializer = new XMLSerializer();
+      const updatedXmlString = serializer.serializeToString(xmlDoc);
+
+      // Create downloadable file
+      const blob = new Blob([updatedXmlString], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.download = 'modified-blog.xml';
+      downloadLink.textContent = 'Download Modified XML';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      URL.revokeObjectURL(url);
+
+      output.textContent = `Modified ${postCount} posts. Download the updated XML file.`;
+      console.log(`Modified ${postCount} posts. Download the updated XML file.`);
+    } catch (error) {
+      output.textContent = `Error download XML: ${error.message}`;
+    }
   }
 
   /**
@@ -138,7 +234,7 @@ export class AppUtils {
     const height = Math.round((Math.max(body.scrollHeight, body.offsetHeight,
       html.clientHeight, html.scrollHeight, html.offsetHeight)) * 1.10);
 
-    const github = 'https://youpingh.github.io/'
+    const github = 'https://youpingh.github.io/blogger/'
     const iframeAttr = {
       title: blogTitle,
       src: `${github}#${pageUrl}`,
@@ -148,18 +244,6 @@ export class AppUtils {
     }
     // console.log(blogTitle, iframeAttr.iframe);
     return iframeAttr;
-  }
-
-  /**
-   * Shows the generated iFrame elements
-   */
-  static showIframes() {
-    let element = document.getElementById('iframe-elements');
-    if (element.style.display == 'block') {
-      element.style.display = 'none';
-    } else {
-      element.style.display = 'block';
-    }
   }
 
   /**
