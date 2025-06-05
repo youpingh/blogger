@@ -118,6 +118,13 @@ body {
     color: rgb(0, 33, 176);
 }
 
+
+.intro-text {
+    font-family: SimSun;
+    font-size: 14px;
+    text-indent: 28px;
+}
+
 img.title {
     float: right;
     height: 60px;
