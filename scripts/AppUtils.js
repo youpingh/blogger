@@ -19,6 +19,39 @@ export class AppUtils {
   }
 
   /**
+   * Goes to the bookmark by id. 
+   * Cannot use #id as the window.location.hash is used by Single Page App approach.
+   * @param {*} id 
+   */
+  static goChapter(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  /**
+   * Shows the "to top" button when the page is down by 20 lines.
+   */
+  static scrollFunction() {
+    let topButton = document.getElementById("topBtn");
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topButton.style.display = "block";
+    } else {
+      topButton.style.display = "none";
+    }
+  }
+
+  /**
+   * Goes to the page top when the user clicks on the button
+   */
+  static toTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  /**
    * Adds 'click' event listeners to all the table of content images (home.html).
    */
   static addHomeListeners() {
@@ -274,8 +307,8 @@ export class AppUtils {
       }
     } else {
       // add a footer event listener for my blog
-      let footer = document.getElementById('page-footer');
-      footer.addEventListener("click", () => {
+      let home = document.getElementById('page-home');
+      home.addEventListener("click", () => {
         window.location.hash = '#home/home';
         window.scrollTo({
           top: 0,
