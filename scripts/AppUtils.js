@@ -81,11 +81,13 @@ export class AppUtils {
     try {
       // get attributes for a iFrame code (title, url, width, height);
       const idx = document.getElementsByTagName('a');
-      let href, pageName, start, blogTitle, attr;
+      const descriptions = document.getElementsByClassName('intro');
+      let href, pageName, start, blogTitle, blogIntro, attr;
       let page = document.getElementById('page-content');
       let pageCode = page.innerHTML;
       for (let i = 0; i < idx.length; i++) {
         blogTitle = idx[i].textContent.substring(1).replace(/\s+/g, "").trim();
+        blogIntro = descriptions[i].textContent;
         href = idx[i].href;
         start = href.indexOf('#') + 1;
         pageName = href.substring(start);
@@ -98,7 +100,7 @@ export class AppUtils {
         } catch (err) {
           console.error("loading", decodeURI(pageName), 'failed', err);
         }
-        attr = AppUtils.genarateAttributes(pageName, blogTitle);
+        attr = AppUtils.genarateAttributes(pageName, blogTitle, blogIntro);
         attributes.push(attr);
         page.innerHTML = pageCode;
       }
@@ -225,8 +227,9 @@ export class AppUtils {
    * Gets the page height and creates an iframe element for other bloggers.
    * @param {*} pageName 
    * @param {*} blogTitle 
+   * @param {*} blogIntro 
    */
-  static genarateAttributes(pageName, blogTitle) {
+  static genarateAttributes(pageName, blogTitle, blogIntro) {
     const pageUrl = decodeURI(pageName);
     const body = document.body;
     const html = document.documentElement;
@@ -234,12 +237,15 @@ export class AppUtils {
     const height = Math.round((Math.max(body.scrollHeight, body.offsetHeight,
       html.clientHeight, html.scrollHeight, html.offsetHeight)) * 1.10);
 
-    const github = 'https://youpingh.github.io/blogger/'
+    const github = 'https://youpingh.github.io/blogger/';
+    const show = (pageUrl.includes('群聊') ? false : true);
     const iframeAttr = {
       title: blogTitle,
+      show: show,
       src: `${github}#${pageUrl}`,
       width: 600,
       height: height,
+      intro: blogIntro,
       iframe: `<iframe src="${github}#${pageUrl}" style='width:600px; height:${height}px;' frameborder="0"></iframe>`
     }
     // console.log(blogTitle, iframeAttr.iframe);
@@ -247,9 +253,9 @@ export class AppUtils {
   }
 
   /**
-   * Adjusts the footer settings for different bloggers.
+   * Adjusts the page settings for different bloggers that use iFrame to reference this page.
    */
-  static adjustFooter() {
+  static adjustPage() {
     const utils = AppUtils.getInstance();
     const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
 
@@ -258,17 +264,17 @@ export class AppUtils {
       origin = window.location.ancestorOrigins[0]; // TODO Firefox doesn't support this property
     }
     let isCreader = (origin && origin == utils.creader);
-    let footer = document.getElementById('page-footer');
     console.log('origin:', origin, 'isCreader:', isCreader);
 
     if (window.self !== window.top) {
-      footer.remove(); // remove the footer for both remove bloggers (creaders and Blogger)
+      utils.removeExtras();
       if (isCreader) { // add a blog index for creaders
         let blog = document.getElementsByClassName('blog')[0];
         blog.appendChild(utils.creaderIdx);
       }
     } else {
       // add a footer event listener for my blog
+      let footer = document.getElementById('page-footer');
       footer.addEventListener("click", () => {
         window.location.hash = '#home/home';
         window.scrollTo({
@@ -281,6 +287,23 @@ export class AppUtils {
       top: 0,
       behavior: 'smooth'
     });
+  }
+
+  /**
+   * Removes some elements when the page is framed by other sites.
+   */
+  removeExtras() {
+    let header = document.getElementById('page-header');
+    let sidebar = document.getElementById('page-sidebar');
+    let footer = document.getElementById('page-footer');
+    if (header) header.remove();
+    if (sidebar) sidebar.remove();
+    if (footer) footer.remove();
+
+    let content = document.getElementById('page-content');
+    let body = document.body;
+    content.className = 'page-content-blog';
+    body.className = 'body-blog';
   }
 
   /**

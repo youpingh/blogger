@@ -1,9 +1,80 @@
 body {
-    width: 580px;
+    width: 960px;
+    margin-left: 6%;
     background-color: transparent;
 }
 
-div.blog {
+.body-blog {
+    width: 590px;
+    margin-left: 0%;
+    background-color: transparent;
+}
+
+.page-content {
+    float: left;
+    width: 74%;
+    padding-right: 3%;
+}
+
+.page-content-blog {
+    width: 100%;
+}
+
+.page-sidebar {
+    float: left;
+    width: 23%;
+    margin-top: 20px;
+}
+
+.sidebar-title {
+    font-family: KaiTi;
+    font-size: 16px;
+    font-weight: bold;
+    /* color: brown; */
+}
+
+.sidebar-label {
+    font-family: SimSun;
+    font-size: 14px;
+}
+
+.sidebar-post {
+    font-family: SimSun;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-left: -12px;
+}
+
+.sidebar-post a,
+.intro-label a {
+    text-decoration: none;
+}
+
+.sidebar-post a:hover {
+    background-color: yellow;
+    text-decoration: underline;
+}
+
+.intro {
+    float: left;
+    width: 42%;
+    margin-top: 20px;
+    margin-left: 4%;
+}
+
+.intro-label {
+    font-family: SimSun;
+    font-size: 14px;
+    line-height: 1.5;
+    list-style-type: circle;
+    text-indent: 4px;
+}
+
+.intro-label li:hover {
+    background-color: yellow;
+}
+
+.blog {
     width: 100%;
     font-family: KaiTi;
     font-size: 16px;
@@ -12,7 +83,7 @@ div.blog {
     margin-bottom: 50px;
 }
 
-p.title {
+.title {
     font-weight: bold;
     font-size: 24px;
     font-family: SimSun;
@@ -21,7 +92,7 @@ p.title {
     color: #800000;
 }
 
-p.sub-title {
+.sub-title {
     font-weight: bold;
     font-size: 20px;
     font-family: SimSun;
@@ -30,20 +101,20 @@ p.sub-title {
     color: rgb(2, 130, 150)
 }
 
-p.date {
+.date {
     font-size: 10pt;
     color: #999999;
     text-align: center;
     text-indent: 0px;
 }
 
-p.noindent {
+.noindent {
     text-indent: 0px;
     font-size: 14px;
     color: blue;
 }
 
-p.blue-text {
+.blue-text {
     color: rgb(0, 33, 176);
 }
 
@@ -57,49 +128,45 @@ img.index {
     width: 100%;
 }
 
-p.paragraph {
+.paragraph {
     font-family: KaiTi;
     font-size: 16px;
     text-indent: 32px;
 }
 
-p.note {
+.note {
     color: grey;
     font-size: 12px;
 }
 
-p.date-title {
+.date-title {
     font-family: Times;
     font-size: 16px;
     font-weight: bold;
 }
 
-p.quote {
+.quote {
     font-family: SimSun;
     font-size: 14px;
 }
 
-p.latin {
+.latin {
     font-family: Times;
 }
 
-p.simsun-text {
-    font-family:SimSun; 
-    font-size: 16px; 
+.simsun-text {
+    font-family: SimSun;
+    font-size: 16px;
     text-indent: 32px;
 }
 
-span.ref {
+.ref {
     font-size: 17px;
     color: blue;
 }
 
-span.link {
+.link {
     font-size: 10px;
-}
-
-span.latin {
-    font-family: Times;
 }
 
 span.quote {
@@ -108,26 +175,26 @@ span.quote {
     color: blue;
 }
 
-span.tile-date {
+.tile-date {
     font-size: 10pt;
     color: #999999;
 }
 
-img.image-left {
+.image-left {
     display: inline;
     float: left;
     margin: 4px 20px 0px 8px;
     border: 0px;
 }
 
-img.image-right {
+.image-right {
     display: inline;
     float: right;
     margin: 4px 8px 0px 20px;
     border: 0px;
 }
 
-img.image-center {
+.image-center {
     display: block;
     margin: 6px auto 20px auto;
     border: 0px;
@@ -159,10 +226,11 @@ ol.list {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 600px;
+    width: 960px;
     height: 40px;
     color: white;
-    text-indent: 32px;
+    text-align: center;
+    padding-bottom: 12px;
     background-color: rgb(68, 68, 68);
     opacity: 0.5;
     cursor: pointer;

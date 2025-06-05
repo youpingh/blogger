@@ -1,5 +1,6 @@
 
 import { AppUtils } from './AppUtils.js';
+import { Sidebar } from './Sidebar.js';
 
 /**
  * This is loader utility to load a content page based on the value of the window.location.hash.
@@ -33,8 +34,14 @@ export class Loader {
     } catch (err) {
       console.error(err);
     }
-    AppUtils.adjustFooter();
+    AppUtils.adjustPage();
     AppUtils.showCodeGenerator();
     AppUtils.addHomeListeners();
+
+    const hash = window.location.hash;
+    if ((hash.length == 0 || hash.includes('home')) || (window.performance &&
+      window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD)) {
+      Sidebar.createTOCs();
+    }
   }
 }

@@ -5,7 +5,7 @@
   <title>My Blogger</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <link rel="icon" href="./images/blog/blog-icon.jpg" type="image/jpg">
@@ -14,8 +14,24 @@
 
 <body>
 
-  <!-- Loads the page content dynamically into the "page-content" tag -->
-  <main id="page-content"></main>
+  <!-- TODO Page header -->
+  <div id="page-header">
+    <a href='#home/home'><img src="images/blog/blog-banner.jpg" width="100%"></a>
+  </div>
+
+
+  <!-- Loads the page content dynamically into the "page-body" tag -->
+  <div id="page-body">
+    <div id='page-content' class='page-content'></div>
+    <div id='page-sidebar' class='page-sidebar'>
+      <div id="afanti2">
+        <p class="sidebar-title">眼下 (2020 - )</p>
+      </div>
+      <div id="afanti1">
+        <p class="sidebar-title">那前儿 (2009 - 2012)</p>
+      </div>
+    </div>
+  </div>
 
   <!-- The page footer that doesn't get loaded by an <iframe> from other sites -->
   <!-- footer always at the bottom of the page -->
