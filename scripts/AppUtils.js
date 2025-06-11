@@ -34,7 +34,7 @@ export class AppUtils {
    * Shows the "to top" button when the page is down by 20 lines.
    */
   static scrollFunction() {
-    let topButton = document.getElementById("topBtn");
+    let topButton = document.getElementById("top-btn");
 
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       topButton.style.display = "block";
@@ -49,44 +49,6 @@ export class AppUtils {
   static toTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-  }
-
-  /**
-   * Adds 'click' event listeners to all the table of content images (home.html).
-   */
-  static addHomeListeners() {
-    const hash = window.location.hash;
-    if (hash.length == 0 || hash.includes('home')) {
-      let icons = document.getElementsByClassName('category');
-      for (let i = 0; i < icons.length; i++) {
-        icons[i].title = '展开目录';
-        icons[i].addEventListener("click", () => {
-          AppUtils.showTOC(icons[i]);
-        });
-        AppUtils.showTOC(icons[i]);
-      }
-      let descs = document.getElementsByClassName('category-index');
-      for (let i = 0; i < descs.length; i++) {
-        descs[i].title = '展开目录';
-        descs[i].addEventListener("click", () => {
-          AppUtils.showTOC(icons[i]);
-        });
-      }
-    }
-  }
-
-  /**
-   * Shows/hides a table of contents when it's image is clicked.
-   */
-  static showTOC(icon) {
-    const id = icon.dataset.id;
-    let table = document.getElementById(id);
-    const display = table.style.display;
-    if (!display || display == 'block') {
-      table.style.display = 'none';
-    } else {
-      table.style.display = 'block';
-    }
   }
 
   /**
@@ -306,19 +268,50 @@ export class AppUtils {
         blog.appendChild(utils.creaderIdx);
       }
     } else {
-      // add a footer event listener for my blog
-      let home = document.getElementById('page-home');
-      home.addEventListener("click", () => {
-        window.location.hash = '#home/home';
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
+      utils.addFooterListeners();
     }
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
+    });
+  }
+
+  /**
+   * Adds event listeners to the footer.
+   */
+  addFooterListeners() {
+
+    // add a footer event listener for my blog
+    let home = document.getElementById('home-btn');
+    home.addEventListener("click", () => {
+      window.location.hash = '#htmls/home';
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // When the user scrolls down 20 lines from the top of the document, show the button
+    window.onscroll = function () { AppUtils.scrollFunction() };
+    const footer = document.getElementById('top-btn');
+    footer.addEventListener('click', AppUtils.toTop);
+    this.loadFooter = false;
+    // console.log('Footer is loaded');
+
+    let element = document.getElementById('translate-btn');
+    element.addEventListener("click", () => {
+      Translator.translatePost(true);
+    });
+
+    element = document.getElementById('re-translate-btn');
+    element.addEventListener("click", () => {
+      Translator.translatePost(false);
+    });
+
+    element = document.getElementById('back-btn');
+    element.addEventListener("click", () => {
+      location.reload();
     });
   }
 

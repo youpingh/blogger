@@ -1,4 +1,3 @@
-import { AppUtils } from './AppUtils.js';
 import { AllPosts } from './AllPosts.js';
 
 /**
@@ -16,6 +15,9 @@ export class Sidebar {
 		return Sidebar._instance;
 	}
 
+	/**
+	 * Creates a TOC in the sidebar.
+	 */
 	static createTOCs() {
 		const sidebar = this.getInstance();
 		for (let i = 1; i < 3; i++) {
@@ -35,16 +37,25 @@ export class Sidebar {
 				show = (j == 0 && i == 2 ? true : false);
 				sidebar.createLabelTOC(category, labels[j], groups[labels[j]], show);
 			}
-			// console.log(labels[0], groups2[labels[0]]);
-			// console.log(labels[2], groups2[labels[2]]);
-			// console.log(posts);
-			// console.log(groups);
+		}
+	}
+
+	/**
+	 * Shows or hides the posts for the specified lable
+	 */
+	static showPostLabels(label) {
+		const ulid = 'ul-' + label;
+		let ul = document.getElementById(ulid);
+		if (ul.style.display === 'none') {
+			ul.style.display = 'block';
+		} else {
+			ul.style.display = 'none';
 		}
 	}
 
 	/**
 	 * Creates a list of titles grouped by label
-	 * https://youpingh.github.io/blogger/#afanti2/label/title
+	 * https://host/#afanti2/label/title
 	 * @param {*} posts 
 	 * @returns 
 	 */
@@ -92,22 +103,8 @@ export class Sidebar {
 			li.innerHTML = link;
 			ul.appendChild(li);
 		}
-		// toc.appendChild(p);
 		toc.appendChild(ul);
 		// console.log(bookIdx.innerHTML);
-	}
-
-	/**
-	 * Shows or hides the posts for the specified lable
-	 */
-	static showPostLabels(label) {
-		const ulid = 'ul-' + label;
-		let ul = document.getElementById(ulid);
-		if (ul.style.display === 'none') {
-			ul.style.display = 'block';
-		} else {
-			ul.style.display = 'none';
-		}
 	}
 }
 

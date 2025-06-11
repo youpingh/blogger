@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Translation Cache with localStorage</title>
+</head>
+
+<body>
+    <h2>Text Translation Example</h2>
+    <textarea id="sourceText" rows="4" cols="50" placeholder="Enter text to translate..."></textarea><br>
+    <button onclick="translateText()">Translate</button>
+    <p><strong>Translation:</strong></p>
+    <div id="output"></div>
+
+    <script>
+        async function translateText() {
+            const input = document.getElementById('sourceText').value.trim();
+            if (!input) return;
+
+            const cacheKey = 'translation_' + safeBtoa(input); // Use base64 to make safe key
+
+            // Try to get from localStorage
+            const cached = localStorage.getItem(cacheKey);
+            if (cached) {
+                document.getElementById('output').textContent = '[From cache] ' + cached + '[ Remove and recache] ';
+                localStorage.removeItem(cacheKey);
+            }
+
+            // Simulate an API call (replace with actual OpenAI API call)
+            const translated = await fakeTranslateAPI(input);
+
+            // Store in localStorage
+            localStorage.setItem(cacheKey, translated);
+            document.getElementById('output').textContent = '[Translated] ' + translated;
+        }
+
+        // Dummy translation function (replace with real API logic)
+        async function fakeTranslateAPI(text) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve('Translated: ' + text); // Replace this with actual translation
+                }, 500); // Simulate network delay
+            });
+        }
+
+        function safeBtoa(str) {
+            return btoa(unescape(encodeURIComponent(str)));
+        }
+    </script>
+</body>
+
+</html>

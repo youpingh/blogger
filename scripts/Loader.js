@@ -7,7 +7,9 @@ import { Sidebar } from './Sidebar.js';
  */
 export class Loader {
 
-  constructor() { }
+  constructor() {
+    this.loadFooter = true;
+  }
 
   static getInstance() {
     if (!Loader._instance) {
@@ -21,27 +23,47 @@ export class Loader {
    */
   static async loadPage() {
 
-    // the full window.location.hash looks like this #blogger/label/title
-    const pageName = (window.location.hash.replace("#", "") || 'home/home') + '.html';
-    let page = document.getElementById('page-content');
+    const loader = Loader.getInstance();
 
-    try {
-      await fetch(pageName)
-        .then(response => response.text())
-        .then(data => page.innerHTML = data)
-        .catch(error => console.error("Error loading page:", error));
-      // console.log(pageName, 'is loaded');
-    } catch (err) {
-      console.error(err);
-    }
+    // the full window.location.hash looks like this #blogger/label/title
+    const pageName = (window.location.hash.replace("#", "") || 'htmls/home') + '.html';
+    const elementId = 'page-content';
+    // let page = document.getElementById('page-content');
+    // let footer = document.getElementById('page-footer');
+
+    await loader.loadHTML(pageName, elementId);
     AppUtils.adjustPage();
     AppUtils.showCodeGenerator();
-    AppUtils.addHomeListeners();
 
     const hash = window.location.hash;
     if ((hash.length == 0 || hash.includes('home')) || (window.performance &&
       window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD)) {
       Sidebar.createTOCs();
+    }
+  }
+
+  async loadHTML(pageName, elementId) {
+    let element = document.getElementById(elementId);
+    try {
+      await fetch(pageName)
+        .then(response => response.text())
+        .then(data => element.innerHTML = data)
+        .catch(error => console.error("Error loading page:", error));
+      // console.log(decodeURIComponent(pageName), 'is loaded');
+    } catch (err) {
+      console.error(err);
+    }
+
+    if (this.loadFooter) {
+      element = document.getElementById('page-footer');
+      try {
+        await fetch('htmls/footer.html')
+          .then(response => response.text())
+          .then(data => element.innerHTML = data)
+          .catch(error => console.error("Error loading page:", error));
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
 }

@@ -85,6 +85,15 @@ body {
     margin-bottom: 50px;
 }
 
+.blog-english {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    /* text-indent: 32px; */
+    color: black;
+    margin-bottom: 50px;
+}
+
 .title {
     font-weight: bold;
     font-size: 24px;
@@ -100,6 +109,13 @@ body {
     font-family: SimSun;
     text-align: center;
     text-indent: 0px;
+    color: rgb(2, 130, 150)
+}
+
+.sub-title2 {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: SimSun;
     color: rgb(2, 130, 150)
 }
 
@@ -135,12 +151,6 @@ img.title {
 
 img.index {
     width: 100%;
-}
-
-.paragraph {
-    font-family: KaiTi;
-    font-size: 16px;
-    text-indent: 32px;
 }
 
 .note {
@@ -242,14 +252,50 @@ ol.list {
     padding-bottom: 12px;
     background-color: rgb(68, 68, 68);
     opacity: 0.5;
-    cursor: pointer;
+    /* cursor: pointer; */
     /* display: none !important; */
+}
+
+.page-links {
+    cursor: pointer;
+    padding-right: 20px;
+    color: white;
 }
 
 .top-btn {
     margin-left: 960px;
-    margin-top: -45px;
+    margin-top: -40px;
     font-size: 36px;
     background-color: rgb(68, 68, 68);
     color: darkcyan;
+    cursor: pointer;
+}
+
+#progress-container {
+    width: 30%;
+    max-width: 70px;
+    margin-top: -45px;
+    margin-left: 85%;
+    display: none;
+    text-align: center;
+}
+
+.spinner {
+    width: 26px;
+    height: 26px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #4caf50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
