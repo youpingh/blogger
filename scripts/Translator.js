@@ -4,6 +4,9 @@ import { Glossary } from './Glossary.js';
  */
 export class Translator {
 
+	static TRANSLATE_URL = 'https://key-manager-462519.uc.r.appspot.com/translate';
+	// static TRANSLATE_URL = 'http://127.0.0.1:8080/translate';
+
 	constructor() {
 		this.model = "gpt-3.5-turbo";
 		this.maxLength = 16000; // 16K tokens are about 12,000 -- 15,000 Chinese characters
@@ -97,16 +100,15 @@ export class Translator {
 		];
 
 		try {
-			const response = await fetch('https://key-manager-462519.uc.r.appspot.com/translate', {
-			// const response = await fetch('http://127.0.0.1:8080/translate', {
+			const response = await fetch(TRANSLATE_URL, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify({ 
+				body: JSON.stringify({
 					messages: messages,
 					temperature: 0.3
-				 })
+				})
 			});
 
 			const data = await response.json();

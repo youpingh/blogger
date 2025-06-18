@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Get Pinyin (OpenAI)</title>
+</head>
+
+<body>
+  <div style="margin-top: 20px">
+    <textarea id="inputText" rows="3" cols="50">今天的天气不错</textarea><br>
+    <button onclick="getPinyin()">Get Pinyin</button>
+    <p id="pinyin"></p>
+  </div>
+
+  <script>
+    // Calls to Google TTS service to transform text to speech (Good quality)
+    async function getPinyin() {
+
+      const TEST_TTS_URL = 'http://127.0.0.1:8080/pinyin';
+      const TTS_URL = 'https://key-manager-462519.uc.r.appspot.com/pinyin';
+      const text = document.getElementById('inputText').value;
+      const requestBody = {
+        text: text
+      }
+
+      try {
+        // const response = await fetch(TTS_URL, {
+        const response = await fetch(TEST_TTS_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(requestBody)
+        });
+
+        const pinyin = await response.json();
+        const element = document.getElementById('pinyin');
+        element.textContent = pinyin.text + ', ' + pinyin.pinyin;
+      } catch (error) {
+        console.error("Error: " + error.message);
+      }
+    }
+  </script>
+</body>
+
+</html>
