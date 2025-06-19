@@ -47,12 +47,21 @@ body {
     margin-left: -12px;
 }
 
+.sidebar-post-english {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-left: -12px;
+}
+
 .sidebar-post a,
+.sidebar-post-english a,
 .intro-label a {
     text-decoration: none;
 }
 
-.sidebar-post a:hover {
+.sidebar-post a:hover,
+.sidebar-post-english a:hover {
     background-color: yellow;
     text-decoration: underline;
 }
@@ -110,6 +119,14 @@ body {
     text-align: center;
     text-indent: 0px;
     color: rgb(2, 130, 150)
+}
+
+.english-color {
+	color: brown;
+}
+
+.chinese-color {
+	color: darkgreen;
 }
 
 .sub-title2 {

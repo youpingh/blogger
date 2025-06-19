@@ -100,7 +100,7 @@ export class Translator {
 		];
 
 		try {
-			const response = await fetch(TRANSLATE_URL, {
+			const response = await fetch(Translator.TRANSLATE_URL, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

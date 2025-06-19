@@ -38,7 +38,8 @@ export class Loader {
     const hash = window.location.hash;
     if ((hash.length == 0 || hash.includes('home')) || (window.performance &&
       window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD)) {
-      Sidebar.createTOCs();
+      Sidebar.createTOCs(false);
+      // Sidebar.printPostTitles();
     }
   }
 

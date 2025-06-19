@@ -1,3 +1,4 @@
+import { Sidebar } from './Sidebar.js';
 
 /**
  * This is a utility to generate all <iframe> tages for other bloggers.
@@ -268,7 +269,7 @@ export class AppUtils {
         blog.appendChild(utils.creaderIdx);
       }
     } else {
-      utils.addFooterListeners();
+      utils.addListeners();
     }
 
     window.scrollTo({
@@ -280,7 +281,7 @@ export class AppUtils {
   /**
    * Adds event listeners to the footer.
    */
-  addFooterListeners() {
+  addListeners() {
 
     // add a footer event listener for my blog
     let home = document.getElementById('home-btn');
@@ -313,6 +314,24 @@ export class AppUtils {
     element.addEventListener("click", () => {
       location.reload();
     });
+
+    // add an event handler to the language element
+    element = document.getElementById('language');
+    element.addEventListener("click", AppUtils.switchTOCLang);
+  }
+
+  static switchTOCLang() {
+    let element = document.getElementById('language');
+    let lang = element.lang;
+    if (lang == 'zh-CN') {
+      element.lang = 'en';
+      element.className = 'fa-solid fa-language english-color';
+    }
+    else {
+      element.lang = 'zh-CN';
+      element.className = 'fa-solid fa-language chinese-color';
+    };
+    Sidebar.createTOCs(true);
   }
 
   /**
@@ -370,6 +389,7 @@ export class AppUtils {
     idx.appendChild(img);
     return idx;
   }
+
 }
 
 window.AppUtils = AppUtils;
