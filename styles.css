@@ -156,8 +156,9 @@ body {
 
 .intro-text {
     font-family: SimSun;
-    font-size: 14px;
-    text-indent: 28px;
+    font-size: 16px;
+    text-indent: 32px;
+    color: darkblue ;
 }
 
 img.title {
