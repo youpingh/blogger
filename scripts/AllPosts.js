@@ -403,10 +403,10 @@ export class AllPosts {
         "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-1",
         "width": 600,
-        "height": 915,
-        "intro": "群里聊天，不免或有些不着调的小作文。",
+        "height": 1300,
+        "intro": "群里聊天，不免会有些不着调的小作文。",
         "introEnglish": "",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-1' style='width:600px; height:915px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-1' style='width:600px; height:1250px;' frameborder='0'></iframe>"
       },
       {
         "title": "路边的洋娃娃",
