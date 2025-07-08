@@ -341,9 +341,9 @@ export class AppUtils {
     let header = document.getElementById('page-header');
     let sidebar = document.getElementById('page-sidebar');
     let footer = document.getElementById('page-footer');
-    if (header) header.remove();
-    if (sidebar) sidebar.remove();
-    if (footer) footer.remove();
+    if (header) {header.style.display = 'none'; header.remove();}
+    if (sidebar) {sidebar.style.display = 'none'; sidebar.remove();}
+    if (footer) {footer.style.display = 'none'; footer.remove();}
 
     let content = document.getElementById('page-content');
     let body = document.body;
