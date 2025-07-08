@@ -360,13 +360,12 @@ export class AppUtils {
     let code = document.getElementById('code')
     const showGenerator = (host.startsWith('127.0.0.1') && code != null);
     if (showGenerator) {
-      code.style.display = 'block';
-      footer.style.display = 'none';
+      if (code) code.style.display = 'block';
+      if (footer) footer.style.display = 'none';
       // console.log(document.body.innerHTML);
     } else {
-      footer.style.display = 'block';
-      if (code)
-        code.style.display = 'none';
+      if (footer) footer.style.display = 'block';
+      if (code) code.style.display = 'none';
     }
   }
 
