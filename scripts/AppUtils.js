@@ -35,7 +35,7 @@ export class AppUtils {
    * Shows the "to top" button when the page is down by 20 lines.
    */
   static scrollFunction() {
-    let topButton = document.getElementById("top-btn");
+    const topButton = document.getElementById("top-btn");
 
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       topButton.style.display = "block";
@@ -259,9 +259,11 @@ export class AppUtils {
     if (!isFirefox) {
       origin = window.location.ancestorOrigins[0]; // TODO Firefox doesn't support this property
     }
-    let isCreader = (origin && origin == utils.creader);
+    const isCreader = (origin && origin == utils.creader);
     console.log('origin:', origin, 'isCreader:', isCreader);
 
+    // if the blog is loaded by an iFrame from a blogger site (creaders, blogger, etc.)
+    // show the content section only. Otherwise, show the entire page.
     if (window.self !== window.top) {
       utils.removeExtras();
       if (isCreader) { // add a blog index for creaders
@@ -269,6 +271,8 @@ export class AppUtils {
         blog.appendChild(utils.creaderIdx);
       }
     } else {
+      const header = document.getElementById('page-header');
+      if (header) { header.style.display = 'block' }
       utils.addListeners();
     }
 
@@ -284,7 +288,7 @@ export class AppUtils {
   addListeners() {
 
     // add a footer event listener for my blog
-    let home = document.getElementById('home-btn');
+    const home = document.getElementById('home-btn');
     home.addEventListener("click", () => {
       window.location.hash = '#htmls/home';
       window.scrollTo({
@@ -321,8 +325,8 @@ export class AppUtils {
   }
 
   static switchTOCLang() {
-    let element = document.getElementById('language');
-    let lang = element.lang;
+    const element = document.getElementById('language');
+    const lang = element.lang;
     if (lang == 'zh-CN') {
       element.lang = 'en';
       element.className = 'fa-solid fa-language english-color';
@@ -338,15 +342,15 @@ export class AppUtils {
    * Removes some elements when the page is framed by other sites.
    */
   removeExtras() {
-    let header = document.getElementById('page-header');
-    let sidebar = document.getElementById('page-sidebar');
-    let footer = document.getElementById('page-footer');
-    if (header) {header.style.display = 'none'; header.remove();}
-    if (sidebar) {sidebar.style.display = 'none'; sidebar.remove();}
-    if (footer) {footer.style.display = 'none'; footer.remove();}
+    const header = document.getElementById('page-header');
+    const sidebar = document.getElementById('page-sidebar');
+    const footer = document.getElementById('page-footer');
+    if (header) { header.style.display = 'none'; header.remove(); }
+    if (sidebar) { sidebar.style.display = 'none'; sidebar.remove(); }
+    if (footer) { footer.style.display = 'none'; footer.remove(); }
 
-    let content = document.getElementById('page-content');
-    let body = document.body;
+    const content = document.getElementById('page-content');
+    const body = document.body;
     content.className = 'page-content-blog';
     body.className = 'body-blog';
   }
@@ -356,8 +360,8 @@ export class AppUtils {
    */
   static showCodeGenerator() {
     const host = window.location.host;
-    let footer = document.getElementById('page-footer');
-    let code = document.getElementById('code')
+    const footer = document.getElementById('page-footer');
+    const code = document.getElementById('code')
     const showGenerator = (host.startsWith('127.0.0.1') && code != null);
     if (showGenerator) {
       if (code) code.style.display = 'block';
@@ -374,8 +378,8 @@ export class AppUtils {
    * @returns
    */
   static createIndex() {
-    let idx = document.createElement('a');
-    let img = document.createElement('img');
+    const idx = document.createElement('a');
+    const img = document.createElement('img');
     img.title = 'My Blog Index';
     img.style.width = '100%';
     img.src = "images/blog/BlogIndex.jpg";
