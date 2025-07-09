@@ -263,7 +263,7 @@ export class AppUtils {
     console.log('origin:', origin, 'isCreader:', isCreader);
 
     // if the blog is loaded by an iFrame from a blogger site (creaders, blogger, etc.)
-    // show the content section only. Otherwise, show the entire page.
+    // show the content section only. Otherwise, show the entire page (header, content, sidebar).
     if (window.self !== window.top) {
       utils.removeExtras();
       if (isCreader) { // add a blog index for creaders
@@ -272,8 +272,11 @@ export class AppUtils {
       }
     } else {
       const header = document.getElementById('page-header');
+      const sidebar = document.getElementById('page-sidebar');
       if (header) { header.style.display = 'block' }
+      if (sidebar) { sidebar.style.display = 'block' }
       utils.addListeners();
+      console.log('The header and sidebar are turned on');
     }
 
     window.scrollTo({
