@@ -4,8 +4,8 @@ import { Glossary } from './Glossary.js';
  */
 export class Translator {
 
-	static TRANSLATE_URL = 'https://key-manager-462519.uc.r.appspot.com/translate';
-	// static TRANSLATE_URL = 'http://127.0.0.1:8080/translate';
+	static TRANSLATE_URL = 'https://learner-gateway.uc.r.appspot.com/translate';
+	// static TRANSLATE_URL = 'http://127.0.0.1:3000/translate';
 
 	constructor() {
 		this.model = "gpt-3.5-turbo";

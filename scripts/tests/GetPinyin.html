@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Get Pinyin (OpenAI)</title>
+  <title>Get Pinyin (Google)</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     async function getPinyin() {
 
       const TEST_TTS_URL = 'http://127.0.0.1:8080/pinyin';
-      const TTS_URL = 'https://key-manager-462519.uc.r.appspot.com/pinyin';
+      const TTS_URL = 'https://learner-gateway.uc.r.appspot.com/pinyin';
       const text = document.getElementById('inputText').value;
       const requestBody = {
         text: text

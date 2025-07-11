@@ -15,7 +15,7 @@
   <script>
     async function transcribeAudioFile() {
       const TEST_STT_URL = 'http://127.0.0.1:8080/stt';
-      const STT_URL = 'https://key-manager-462519.uc.r.appspot.com/stt';
+      const STT_URL = 'https://learner-gateway.uc.r.appspot.com/stt';
 
       const fileInput = document.getElementById("audioInput");
       if (fileInput.files.length === 0) return;
@@ -40,7 +40,7 @@
 
     async function transcribeAudioMic() {
       const TEST_STT_URL = 'http://127.0.0.1:8080/stt';
-      const STT_URL = 'https://key-manager-462519.uc.r.appspot.com/stt';
+      const STT_URL = 'https://learner-gateway.uc.r.appspot.com/stt';
 
       try {
         let stream = await navigator.mediaDevices.getUserMedia({ audio: true });
