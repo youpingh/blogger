@@ -71,12 +71,12 @@ export class AllPosts {
         "title": "旅行者，旅游者",
         "titleEnglish": "Traveler, Tourist",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti2/字里行间/旅行者-旅游者",
+        "src": "https://youpingh.github.io/blogger/#afanti2/字里行间/旅行者，旅游者",
         "width": 600,
         "height": 1294,
         "intro": "在书中看到的一切如同离轨的卫星，迷茫而失落，孤独和挣扎",
         "introEnglish": "Everything seen in the book felt like a satellite off its orbit, lost and bewildered, lonely and struggling.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/字里行间/旅行者-旅游者' style='width:600px; height:1294px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/字里行间/旅行者，旅游者' style='width:600px; height:1294px;' frameborder='0'></iframe>"
       },
       {
         "title": "那些事儿",
@@ -588,34 +588,34 @@ export class AllPosts {
         "title": "那些年听过的歌（上）",
         "titleEnglish": "Songs Heard in Those Years (Part 1)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌-上",
+        "src": "https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌（上）",
         "width": 600,
         "height": 1729,
         "intro": "唱得相当动情，下面听众中的同龄人也为之动容",
         "introEnglish": "Sang with such deep emotion, and the peers in the audience were also moved.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌-上' style='width:600px; height:1729px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌（上）' style='width:600px; height:1729px;' frameborder='0'></iframe>"
       },
       {
         "title": "那些年听过的歌（中）",
         "titleEnglish": "Songs Heard in Those Years (Part 2)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌-中",
+        "src": "https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌（中）",
         "width": 600,
         "height": 1274,
         "intro": "很久很久没听过这么轻柔的歌声和这么直白的爱情表达了",
         "introEnglish": "It's been a very long time since I heard such gentle singing and such direct expressions of love.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌-中' style='width:600px; height:1274px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌（中）' style='width:600px; height:1274px;' frameborder='0'></iframe>"
       },
       {
         "title": "那些年听过的歌（下）",
         "titleEnglish": "Songs Heard in Those Years (Part 3)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌-下",
+        "src": "https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌（下）",
         "width": 600,
         "height": 1407,
         "intro": "那不是传说中的歌神，那就是活生生的几个歌神",
         "introEnglish": "They weren't legendary singing gods; they were several living singing gods.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌-下' style='width:600px; height:1407px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/林林总总/那些年听过的歌（下）' style='width:600px; height:1407px;' frameborder='0'></iframe>"
       },
       {
         "title": "这些年听过的歌",

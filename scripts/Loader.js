@@ -1,6 +1,7 @@
 
 import { AppUtils } from './AppUtils.js';
 import { Sidebar } from './Sidebar.js';
+import { DataStore } from './DataStore.js';
 
 /**
  * This is loader utility to load a content page based on the value of the window.location.hash.
@@ -17,6 +18,8 @@ export class Loader {
     }
     return Loader._instance;
   }
+
+
 
   /**
    * Loads a blog according to the value of window.location.hash.
@@ -61,6 +64,11 @@ export class Loader {
         await fetch('htmls/footer.html')
           .then(response => response.text())
           .then(data => element.innerHTML = data)
+          .then(() => {
+            DataStore.signInSilently();
+            this.loadFooter = false;
+            console.log('loaded footer');
+          })
           .catch(error => console.error("Error loading page:", error));
       } catch (err) {
         console.error(err);

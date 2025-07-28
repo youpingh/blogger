@@ -1,5 +1,6 @@
 body {
-    width: 960px;
+    width: 100%;
+    max-width: 960px;
     margin-left: 6%;
     background-color: transparent;
 }
@@ -122,11 +123,11 @@ body {
 }
 
 .english-color {
-	color: brown;
+    color: brown;
 }
 
 .chinese-color {
-	color: darkgreen;
+    color: darkgreen;
 }
 
 .sub-title2 {
@@ -158,7 +159,7 @@ body {
     font-family: SimSun;
     font-size: 16px;
     text-indent: 32px;
-    color: darkblue ;
+    color: darkblue;
 }
 
 img.title {
@@ -259,19 +260,24 @@ ol.list {
     display: none;
 }
 
+.footer-invisible {
+       display: none !important; 
+}
+
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 1030px;
+    width: 100%;
+    max-width: 960px;
+    margin-left: 6%;
     height: 36px;
     color: white;
     text-align: center;
     padding-bottom: 12px;
     background-color: rgb(68, 68, 68);
     opacity: 0.5;
-    /* cursor: pointer; */
-    /* display: none !important; */
+    display: block !important;
 }
 
 .page-links {
@@ -281,7 +287,7 @@ ol.list {
 }
 
 .top-btn {
-    margin-left: 960px;
+    margin-left: 900px;
     margin-top: -40px;
     font-size: 36px;
     background-color: rgb(68, 68, 68);

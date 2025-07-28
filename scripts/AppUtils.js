@@ -1,4 +1,5 @@
 import { Sidebar } from './Sidebar.js';
+import { DataStore } from './DataStore.js';
 
 /**
  * This is a utility to generate all <iframe> tages for other bloggers.
@@ -307,7 +308,12 @@ export class AppUtils {
     this.loadFooter = false;
     // console.log('Footer is loaded');
 
-    let element = document.getElementById('translate-btn');
+    let element = document.getElementById('tts-btn');
+    element.addEventListener("click", () => {
+      DataStore.saveProgress();
+    });
+
+    element = document.getElementById('translate-btn');
     element.addEventListener("click", () => {
       Translator.translatePost(true);
     });
