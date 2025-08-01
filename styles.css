@@ -15,6 +15,7 @@ body {
     float: left;
     width: 74%;
     padding-right: 3%;
+    padding-bottom: 50px;
 }
 
 .page-content-blog {
@@ -261,7 +262,7 @@ ol.list {
 }
 
 .footer-invisible {
-       display: none !important; 
+    display: none !important;
 }
 
 .footer {
@@ -269,15 +270,24 @@ ol.list {
     left: 0;
     bottom: 0;
     width: 100%;
-    max-width: 960px;
+    max-width: 710px;
     margin-left: 6%;
-    height: 36px;
+    height: 80px;
     color: white;
-    text-align: center;
+    padding-left: 2%;
     padding-bottom: 12px;
     background-color: rgb(68, 68, 68);
     opacity: 0.5;
+    z-index: -1;
     display: block !important;
+}
+
+.text-reader {
+    width: 400px;
+    height: 26px;
+    border: 0px;
+    font-size: 10px;
+    border-radius: 6px;
 }
 
 .page-links {
@@ -286,8 +296,12 @@ ol.list {
     color: white;
 }
 
+.line-middle {
+    vertical-align:super;
+}
+
 .top-btn {
-    margin-left: 900px;
+    margin-left: 860px;
     margin-top: -40px;
     font-size: 36px;
     background-color: rgb(68, 68, 68);

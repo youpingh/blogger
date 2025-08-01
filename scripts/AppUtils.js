@@ -1,5 +1,5 @@
 import { Sidebar } from './Sidebar.js';
-import { DataStore } from './DataStore.js';
+import { BlogReader } from './BlogReader.js';
 
 /**
  * This is a utility to generate all <iframe> tages for other bloggers.
@@ -310,7 +310,7 @@ export class AppUtils {
 
     let element = document.getElementById('tts-btn');
     element.addEventListener("click", () => {
-      DataStore.saveProgress();
+      BlogReader.readBlog();
     });
 
     element = document.getElementById('translate-btn');

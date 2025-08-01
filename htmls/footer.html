@@ -1,11 +1,16 @@
 <!-- footer always at the bottom of the page -->
-<p id="user-btn">
-  <span id='home-btn' class='page-links' href="#" title="回总目录">🏠 回总目录</span>
-  <span class="fa-solid fa-volume-high"></span><span id='tts-btn' class='page-links'"> TTS</span>
-    <span id='translate-btn' class='page-links'>🔤 Translate </span>
-    <span class=" fa-solid fa-language"></span><span id='back-btn' class='page-links'> Back to Chinese</span>
-  <span id='re-translate-btn' class='page-links'><span class="fa-solid fa-refresh"></span> Refresh
-    Translation</span></a>
+<p>
+  <span id='home-btn' class='page-links' href="#" title="回总目录">🏠 Home</span>
+  <span id='translate-btn' class='page-links'>🔤 Translate </span>
+  <span class=" fa-solid fa-language"></span><span id='back-btn' class='page-links'> Back to Chinese</span>
+  <span class="fa-solid fa-refresh"></span><span id='re-translate-btn' class='page-links'> Refresh
+    Translation</span>
+</p>
+<p>
+  <span class="fa-solid fa-volume-high line-middle"></span><span id='tts-btn' class='page-links line-middle'"> TTS</span>
+  <audio id="text-reader" controls class='text-reader'>
+    <source type="audio/mpeg" preload="metadata" src="" />
+  </audio>
 </p>
 
 <div id="progress-container">
