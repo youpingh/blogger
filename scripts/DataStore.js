@@ -7,7 +7,9 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   onAuthStateChanged,
-  signOut
+  signOut,
+  setPersistence,
+  browserLocalPersistence
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 /**
@@ -73,6 +75,7 @@ export class DataStore {
     // if (!store.auth.currentUser) {
     //   await store.auth.signInWithRedirect?.(); // for older fallback
     // }
+    await setPersistence(store.auth, browserLocalPersistence);
 
     // show/hide the specified element for the approved users.
     const dbButton = document.getElementById('page-footer');
