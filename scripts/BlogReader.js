@@ -102,11 +102,11 @@ export class BlogReader {
             const parts = sentence.split('，');
             for (const part of parts) {
               this.readingElements.push(part + '，')
-              console.log('part len:', part.length, part + '，');
+              // console.log('part len:', part.length, part + '，');
             }
           } else {
             this.readingElements.push(sentence);
-            console.log('sentence len:', sentence.length, sentence);
+            // console.log('sentence len:', sentence.length, sentence);
           }
           lastIndex += original.indexOf(punctuation) + 1;
         }

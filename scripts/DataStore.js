@@ -41,7 +41,7 @@ export class DataStore {
     this.auth = getAuth(this.app);
     this.provider = new GoogleAuthProvider();
     this.isApprovedUser = false;
-    this.approvedEmails = ['youpingh@gmail.com', 'peterhu86@gmail.com'];
+    this.approvedEmails = ['youpingh@gmail.com', 'peterhu86@gmail.com', 'peter@TheGoodNeighbors.com'];
   }
 
   static getInstance() {
@@ -70,9 +70,9 @@ export class DataStore {
     const store = this.getInstance();
 
     // Try silent login (Google keeps session)
-    if (!store.auth.currentUser) {
-      await store.auth.signInWithRedirect?.(); // for older fallback
-    }
+    // if (!store.auth.currentUser) {
+    //   await store.auth.signInWithRedirect?.(); // for older fallback
+    // }
 
     // show/hide the specified element for the approved users.
     const dbButton = document.getElementById('page-footer');
