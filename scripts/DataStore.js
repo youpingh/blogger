@@ -78,14 +78,17 @@ export class DataStore {
     await setPersistence(store.auth, browserLocalPersistence);
 
     // show/hide the specified element for the approved users.
-    const dbButton = document.getElementById('page-footer');
+    const dbBtn = document.getElementById('page-footer');
+    const loginBtn = document.getElementById('login-btn');
     onAuthStateChanged(store.auth, user => {
       if (user && store.approvedEmails.includes(user.email)) {
         store.isApprovedUser = true;
-        dbButton.className = 'footer';
+        dbBtn.className = 'footer';
+        loginBtn.style.display = 'none';
         console.log(`Welcome ${user.email}`);
       } else {
-        dbButton.className = 'footer-invisible';
+        dbBtn.className = 'footer-invisible';
+        loginBtn.style.display = 'block';
         store.isApprovedUser = false;
       }
       const info = user

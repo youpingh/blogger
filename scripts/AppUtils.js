@@ -1,5 +1,6 @@
 import { Sidebar } from './Sidebar.js';
 import { BlogReader } from './BlogReader.js';
+import { DataStore } from './DataStore.js';
 
 /**
  * This is a utility to generate all <iframe> tages for other bloggers.
@@ -331,6 +332,14 @@ export class AppUtils {
     // add an event handler to the language element
     element = document.getElementById('language');
     element.addEventListener("click", AppUtils.switchTOCLang);
+
+    // add a clickable area to the banner
+    const banner = document.getElementById('banner');
+    const area = document.getElementById('map');
+    const width = banner.width;
+    const height = banner.height;
+    const coords = [width * 0.05, height * 0.25, width * 0.55, height * 0.7];
+    area.coords = coords[0] + ',' + coords[1] + ',' + coords[2] + ',' + coords[3];
   }
 
   static switchTOCLang() {
