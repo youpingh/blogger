@@ -1,6 +1,5 @@
 import { Sidebar } from './Sidebar.js';
 import { BlogReader } from './BlogReader.js';
-import { DataStore } from './DataStore.js';
 
 /**
  * This is a utility to generate all <iframe> tages for other bloggers.

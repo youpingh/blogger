@@ -56,6 +56,8 @@ export class BlogReader {
   resetReader() {
     this.readingElements = [];
     this.index = 0;
+    const player = document.getElementById(this.audioId);
+    player.src = '';
     console.log("Done reading");
   }
 
