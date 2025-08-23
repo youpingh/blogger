@@ -32,18 +32,22 @@ export class DataStore {
       measurementId: "G-7BW30WBR65"
     };
 
-    // Initialize the app to access the database
-    this.app = initializeApp(this.firebaseConfig);
-    // this.analytics = getAnalytics(this.app);
+    this.doAuth = (document.getElementById('page-footer') != null);
 
-    // Get Firestore instance
-    this.db = getFirestore(this.app);
+    if (this.doAuth) {
+      // Initialize the app to access the database
+      this.app = initializeApp(this.firebaseConfig);
+      // this.analytics = getAnalytics(this.app);
 
-    // Authentication
-    this.auth = getAuth(this.app);
-    this.provider = new GoogleAuthProvider();
-    this.isApprovedUser = false;
-    this.approvedEmails = ['youpingh@gmail.com', 'peterhu86@gmail.com', 'peter@TheGoodNeighbors.com'];
+      // Get Firestore instance
+      this.db = getFirestore(this.app);
+
+      // Authentication
+      this.auth = getAuth(this.app);
+      this.provider = new GoogleAuthProvider();
+      this.isApprovedUser = false;
+      this.approvedEmails = ['youpingh@gmail.com', 'peterhu86@gmail.com', 'peter@TheGoodNeighbors.com'];
+    }
   }
 
   static getInstance() {
@@ -70,6 +74,11 @@ export class DataStore {
   static async signInSilently() {
 
     const store = this.getInstance();
+    if (!store.doAuth) {
+      return;
+    }
+    const dbBtn = document.getElementById('page-footer');
+    const loginBtn = document.getElementById('login-btn');
 
     // Try silent login (Google keeps session)
     // if (!store.auth.currentUser) {
@@ -78,8 +87,6 @@ export class DataStore {
     await setPersistence(store.auth, browserLocalPersistence);
 
     // show/hide the specified element for the approved users.
-    const dbBtn = document.getElementById('page-footer');
-    const loginBtn = document.getElementById('login-btn');
     onAuthStateChanged(store.auth, user => {
       if (user && store.approvedEmails.includes(user.email)) {
         store.isApprovedUser = true;
@@ -100,38 +107,44 @@ export class DataStore {
 
   static signIn() {
     const store = this.getInstance();
-    signInWithPopup(store.auth, store.provider)
-      .then(result => console.log("Signed in:", result.user))
-      .catch(error => console.error("Sign-in error:", error));
+    if (store.doAuth) {
+      signInWithPopup(store.auth, store.provider)
+        .then(result => console.log("Signed in:", result.user))
+        .catch(error => console.error("Sign-in error:", error));
+    }
   }
 
   static signOut() {
     const store = this.getInstance();
-    signOut(store.auth).then(() => {
-      console.log("Signed out");
-    });
+    if (store.doAuth) {
+      signOut(store.auth).then(() => {
+        console.log("Signed out");
+      });
+    }
   }
 
   static saveProgress() {
     const store = this.getInstance();
-    const user = store.auth.currentUser;
-    if (!user) {
-      alert("Please sign in first.");
-      return;
+    if (store.doAuth) {
+      const user = store.auth.currentUser;
+      if (!user) {
+        alert("Please sign in first.");
+        return;
+      }
+
+      const userId = user.email;
+      const now = new Date();
+      const progress = { level: 'A3', lesson: 5, time: now };
+
+      const colRef = collection(store.db, 'progress');
+      const docRef = doc(colRef, userId);
+
+      setDoc(docRef, progress)
+        .then(() => {
+          console.log('Progress saved:', JSON.stringify(progress));
+        })
+        .catch(error => console.error('Error:', error));
     }
-
-    const userId = user.email;
-    const now = new Date();
-    const progress = { level: 'A3', lesson: 5, time: now };
-
-    const colRef = collection(store.db, 'progress');
-    const docRef = doc(colRef, userId);
-
-    setDoc(docRef, progress)
-      .then(() => {
-        console.log('Progress saved:', JSON.stringify(progress));
-      })
-      .catch(error => console.error('Error:', error));
   }
 }
 window.DataStore = DataStore;

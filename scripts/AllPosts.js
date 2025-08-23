@@ -1149,12 +1149,12 @@ export class AllPosts {
         "title": "三字经，成人启蒙",
         "titleEnglish": "Three Character Classic, Adult Enlightenment",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/开卷有益/三字经-成人启蒙",
+        "src": "https://youpingh.github.io/blogger/#afanti1/开卷有益/三字经，成人启蒙",
         "width": 600,
         "height": 930,
         "intro": "急着要上洗手间，被挑出来带到洗手间的那本就是最受读者欢迎的",
         "introEnglish": "Rushing to the restroom, the one picked out and taken to the restroom was the most popular among readers.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/开卷有益/三字经-成人启蒙' style='width:600px; height:930px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/开卷有益/三字经，成人启蒙' style='width:600px; height:930px;' frameborder='0'></iframe>"
       },
       {
         "title": "京味儿的变化",
@@ -1182,12 +1182,12 @@ export class AllPosts {
         "title": "读万卷书，行万里路",
         "titleEnglish": "Read Ten Thousand Books, Travel Ten Thousand Miles",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/开卷有益/读万卷书-行万里路",
+        "src": "https://youpingh.github.io/blogger/#afanti1/开卷有益/读万卷书，行万里路",
         "width": 600,
         "height": 673,
         "intro": "边走边看，边看边想，边想边写的情趣",
         "introEnglish": "The joy of walking and seeing, seeing and thinking, thinking and writing.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/开卷有益/读万卷书-行万里路' style='width:600px; height:673px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/开卷有益/读万卷书，行万里路' style='width:600px; height:673px;' frameborder='0'></iframe>"
       },
       {
         "title": "通俗儒释道",
@@ -1226,12 +1226,12 @@ export class AllPosts {
         "title": "啰嗦的丹・布朗",
         "titleEnglish": "Verbose Dan Brown",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/开卷有益/啰嗦的丹·布朗",
+        "src": "https://youpingh.github.io/blogger/#afanti1/开卷有益/啰嗦的丹・布朗",
         "width": 600,
         "height": 875,
         "intro": "他说如果你是基督徒的话，这本书的内容可能会和你的信仰有冲突",
         "introEnglish": "He said if you're a Christian, the content of this book might conflict with your beliefs.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/开卷有益/啰嗦的丹·布朗' style='width:600px; height:875px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/开卷有益/啰嗦的丹・布朗' style='width:600px; height:875px;' frameborder='0'></iframe>"
       },
       {
         "title": "安静宽厚，超越生死",
@@ -1765,12 +1765,12 @@ export class AllPosts {
         "title": "你叫什么名字",
         "titleEnglish": "What's Your Name?",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字-1",
+        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字",
         "width": 600,
         "height": 1043,
         "intro": "比如说武乡侯吧，姓诸葛，名亮，字孔明，号卧龙先生，自称山人",
         "introEnglish": "For example, Marquis Wu Xiang: surname Zhuge, given name Liang, courtesy name Kongming, self-proclaimed Wolong Mr., called himself a hermit.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字-1' style='width:600px; height:1043px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字' style='width:600px; height:1043px;' frameborder='0'></iframe>"
       },
       {
         "title": "你叫什么名字（续）",
