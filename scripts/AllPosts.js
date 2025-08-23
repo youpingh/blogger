@@ -544,12 +544,12 @@ export class AllPosts {
         "title": "“群”论",
         "titleEnglish": "Group Theory",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti2/林林总总/群论",
+        "src": "https://youpingh.github.io/blogger/#afanti2/林林总总/“群”论",
         "width": 600,
         "height": 1100,
         "intro": "从信息交换的角度看，朋友圈就像一道私人订制的防火墙",
         "introEnglish": "From an information exchange perspective, a WeChat Moments circle is like a personalized firewall.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/林林总总/群论' style='width:600px; height:1100px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/林林总总/“群”论' style='width:600px; height:1100px;' frameborder='0'></iframe>"
       },
       {
         "title": "两宫京剧",
