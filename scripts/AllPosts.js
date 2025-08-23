@@ -93,12 +93,12 @@ export class AllPosts {
         "title": "从《景福阁》到《老县城》",
         "titleEnglish": "From Jingfu Pavilion to Old County Town",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti2/字里行间/从景福阁到老县城",
+        "src": "https://youpingh.github.io/blogger/#afanti2/字里行间/从《景福阁》到《老县城》",
         "width": 600,
         "height": 1880,
         "intro": "穿着一袭素色旗袍，举手投足优雅沉静，款款地从历史深处走出来",
         "introEnglish": "Dressed in a simple qipao, she moved with elegant tranquility, gracefully emerging from the depths of history.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/字里行间/从景福阁到老县城' style='width:600px; height:1880px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/字里行间/从《景福阁》到《老县城》' style='width:600px; height:1880px;' frameborder='0'></iframe>"
       },
       {
         "title": "老大哥正在看着你",
@@ -772,7 +772,7 @@ export class AllPosts {
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/卸甲归田/又退休了一回' style='width:600px; height:942px;' frameborder='0'></iframe>"
       },
       {
-        "title": "1米6，63，能退休吗？",
+        "title": "1米6，63，能退休吗",
         "titleEnglish": "1.6 meters, 63 years old, can I retire?",
         "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/卸甲归田/1米6，63，能退休吗",
@@ -783,7 +783,7 @@ export class AllPosts {
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/卸甲归田/1米6，63，能退休吗' style='width:600px; height:1489px;' frameborder='0'></iframe>"
       },
       {
-        "title": "能退休，退吗？",
+        "title": "能退休，退吗",
         "titleEnglish": "Can Retire, Will You Retire?",
         "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/卸甲归田/能退休，退吗",
@@ -794,7 +794,7 @@ export class AllPosts {
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/卸甲归田/能退休，退吗' style='width:600px; height:1719px;' frameborder='0'></iframe>"
       },
       {
-        "title": "决定退休了，什么时候退？",
+        "title": "决定退休了，什么时候退",
         "titleEnglish": "Decided to Retire, When to Retire?",
         "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/卸甲归田/决定退休了，什么时候退",
@@ -805,7 +805,7 @@ export class AllPosts {
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/卸甲归田/决定退休了，什么时候退' style='width:600px; height:924px;' frameborder='0'></iframe>"
       },
       {
-        "title": "“地狱”考",
+        "title": "地狱考",
         "titleEnglish": "Hell Exam",
         "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/卸甲归田/地狱考",
@@ -851,7 +851,7 @@ export class AllPosts {
       {
         "title": "群聊记录",
         "titleEnglish": "Group check records",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/群聊记录",
         "width": 600,
         "height": 479,
@@ -862,7 +862,7 @@ export class AllPosts {
       {
         "title": "2023-03-",
         "titleEnglish": "2023-03-",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2023-03-",
         "width": 600,
         "height": 4407,
@@ -873,7 +873,7 @@ export class AllPosts {
       {
         "title": "2023-09",
         "titleEnglish": "2023-09",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2023-09",
         "width": 600,
         "height": 1585,
@@ -884,7 +884,7 @@ export class AllPosts {
       {
         "title": "2023-10",
         "titleEnglish": "2023-10",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2023-10",
         "width": 600,
         "height": 4302,
@@ -895,7 +895,7 @@ export class AllPosts {
       {
         "title": "2023-11",
         "titleEnglish": "2023-11",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2023-11",
         "width": 600,
         "height": 3269,
@@ -906,7 +906,7 @@ export class AllPosts {
       {
         "title": "2023-12",
         "titleEnglish": "2023-12",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2023-12",
         "width": 600,
         "height": 2534,
@@ -917,7 +917,7 @@ export class AllPosts {
       {
         "title": "2024-01",
         "titleEnglish": "2024-01",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-01",
         "width": 600,
         "height": 2765,
@@ -928,7 +928,7 @@ export class AllPosts {
       {
         "title": "2024-02",
         "titleEnglish": "2024-02",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-01",
         "width": 600,
         "height": 2765,
@@ -939,7 +939,7 @@ export class AllPosts {
       {
         "title": "2024-03",
         "titleEnglish": "2024-03",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-02",
         "width": 600,
         "height": 3353,
@@ -950,7 +950,7 @@ export class AllPosts {
       {
         "title": "2024-04",
         "titleEnglish": "2024-04",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-03",
         "width": 600,
         "height": 1520,
@@ -961,7 +961,7 @@ export class AllPosts {
       {
         "title": "2024-05",
         "titleEnglish": "2024-05",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-04",
         "width": 600,
         "height": 1306,
@@ -972,7 +972,7 @@ export class AllPosts {
       {
         "title": "2024-06",
         "titleEnglish": "2024-06",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-05",
         "width": 600,
         "height": 1945,
@@ -983,7 +983,7 @@ export class AllPosts {
       {
         "title": "2024-07",
         "titleEnglish": "2024-07",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-06",
         "width": 600,
         "height": 7347,
@@ -994,7 +994,7 @@ export class AllPosts {
       {
         "title": "2024-08",
         "titleEnglish": "2024-08",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-07",
         "width": 600,
         "height": 1132,
@@ -1005,7 +1005,7 @@ export class AllPosts {
       {
         "title": "2024-09",
         "titleEnglish": "2024-09",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-08",
         "width": 600,
         "height": 3425,
@@ -1016,7 +1016,7 @@ export class AllPosts {
       {
         "title": "2024-10",
         "titleEnglish": "2024-10",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-09",
         "width": 600,
         "height": 1188,
@@ -1027,7 +1027,7 @@ export class AllPosts {
       {
         "title": "2024-11",
         "titleEnglish": "2024-11",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-10",
         "width": 600,
         "height": 5271,
@@ -1038,7 +1038,7 @@ export class AllPosts {
       {
         "title": "2024-12",
         "titleEnglish": "2024-12",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2024-11",
         "width": 600,
         "height": 4809,
@@ -1049,7 +1049,7 @@ export class AllPosts {
       {
         "title": "2025-01",
         "titleEnglish": "2025-01",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-01",
         "width": 600,
         "height": 1793,
@@ -1060,7 +1060,7 @@ export class AllPosts {
       {
         "title": "2025-02",
         "titleEnglish": "2025-02",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-02",
         "width": 600,
         "height": 4154,
@@ -1071,7 +1071,7 @@ export class AllPosts {
       {
         "title": "2025-03",
         "titleEnglish": "2025-03",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-03",
         "width": 600,
         "height": 3994,
@@ -1082,7 +1082,7 @@ export class AllPosts {
       {
         "title": "2025-04",
         "titleEnglish": "2025-04",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-04",
         "width": 600,
         "height": 2613,
@@ -1093,13 +1093,46 @@ export class AllPosts {
       {
         "title": "2025-05",
         "titleEnglish": "2025-05",
-        "show": false,
+        "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-05",
         "width": 600,
         "height": 2621,
         "intro": ". 2025-05",
         "introEnglish": "2025-05",
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-05' style='width:600px; height:2621px;' frameborder='0'></iframe>"
+      },
+      {
+        "title": "2025-06",
+        "titleEnglish": "2025-06",
+        "show": true,
+        "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-06",
+        "width": 600,
+        "height": 2621,
+        "intro": ". 2025-06",
+        "introEnglish": "2025-06",
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-06' style='width:600px; height:2621px;' frameborder='0'></iframe>"
+      },
+      {
+        "title": "2025-07",
+        "titleEnglish": "2025-07",
+        "show": true,
+        "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-07",
+        "width": 600,
+        "height": 2621,
+        "intro": ". 2025-07",
+        "introEnglish": "2025-07",
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-07' style='width:600px; height:2621px;' frameborder='0'></iframe>"
+      },
+      {
+        "title": "2025-08",
+        "titleEnglish": "2025-08",
+        "show": true,
+        "src": "https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-08",
+        "width": 600,
+        "height": 2621,
+        "intro": ". 2025-08",
+        "introEnglish": "2025-08",
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/群聊记录/2025-08' style='width:600px; height:2621px;' frameborder='0'></iframe>"
       },
       {
         "title": "认字儿",
@@ -1479,12 +1512,12 @@ export class AllPosts {
         "title": "干校六记（又副册）",
         "titleEnglish": "Cadre School Notes (Addendum)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/陈年往事/干校六记-又副册",
+        "src": "https://youpingh.github.io/blogger/#afanti1/陈年往事/干校六记（又副册）",
         "width": 600,
         "height": 20830,
         "intro": "一晃四十年了，把点点滴滴的记忆整理一下，也分成六段，记在这里",
         "introEnglish": "Forty years have passed in a blink. I've organized bits and pieces of memories into six sections and recorded them here.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/陈年往事/干校六记-又副册' style='width:600px; height:20830px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/陈年往事/干校六记（又副册）' style='width:600px; height:20830px;' frameborder='0'></iframe>"
       },
       {
         "title": "不发文凭的大学",
@@ -1512,12 +1545,12 @@ export class AllPosts {
         "title": "倒“食”差",
         "titleEnglish": "Food Lag",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/陈年往事/倒食差",
+        "src": "https://youpingh.github.io/blogger/#afanti1/陈年往事/倒“食”差",
         "width": 600,
         "height": 6411,
         "intro": "往返于那汪小小的太平洋两岸，倒“食”差比倒时差要来得更难些",
         "introEnglish": "Traveling back and forth across that small Pacific, food lag is harder than jet lag.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/陈年往事/倒食差' style='width:600px; height:6411px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/陈年往事/倒“食”差' style='width:600px; height:6411px;' frameborder='0'></iframe>"
       },
       {
         "title": "老汤",
@@ -1567,12 +1600,12 @@ export class AllPosts {
         "title": "抢“金斗”",
         "titleEnglish": "Snatching the Golden Bucket (Kindle)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/陈年往事/抢金斗",
+        "src": "https://youpingh.github.io/blogger/#afanti1/陈年往事/抢“金斗”",
         "width": 600,
         "height": 977,
         "intro": "我把办法琢磨出来了，太太却要来摘桃子了，总是和我抢“金斗”",
         "introEnglish": "I figured out the method, but my wife wanted to take credit; she always tried to snatch the Golden Bucket (Kindle) from me.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/陈年往事/抢金斗' style='width:600px; height:977px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/陈年往事/抢“金斗”' style='width:600px; height:977px;' frameborder='0'></iframe>"
       },
       {
         "title": "听故事",
@@ -1688,12 +1721,12 @@ export class AllPosts {
         "title": "海浪・阳光・沙滩",
         "titleEnglish": "Waves, Sunshine, Beach",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/行万里路/海浪·阳光·沙滩",
+        "src": "https://youpingh.github.io/blogger/#afanti1/行万里路/海浪・阳光・沙滩",
         "width": 600,
         "height": 989,
         "intro": "休假的时候你还想要什么？随意，飘洒再加上点儿懒洋洋",
         "introEnglish": "What else do you want on vacation? Relaxed, carefree, and a bit lazy.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/行万里路/海浪·阳光·沙滩' style='width:600px; height:989px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/行万里路/海浪・阳光・沙滩' style='width:600px; height:989px;' frameborder='0'></iframe>"
       },
       {
         "title": "眼前有景道不得",
@@ -1743,45 +1776,45 @@ export class AllPosts {
         "title": "你叫什么名字（续）",
         "titleEnglish": "What's Your Name? (Cont.)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字-2",
+        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字（续）",
         "width": 600,
         "height": 1043,
         "intro": "每个名字后面都寄托着我们对子女无限的期望",
         "introEnglish": "Behind every name lies our infinite hopes for our children.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字-2' style='width:600px; height:1043px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字（续）' style='width:600px; height:1043px;' frameborder='0'></iframe>"
       },
       {
         "title": "你叫什么名字（再续）",
         "titleEnglish": "What's Your Name? (Cont. Again)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字-3",
+        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字（再续）",
         "width": 600,
         "height": 1106,
         "intro": "直到现在，如厕时还常想起这个充满诗意的名字呢",
         "introEnglish": "Even now, when I go to the restroom, I often think of this poetic name.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字-3' style='width:600px; height:1106px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/你叫什么名字（再续）' style='width:600px; height:1106px;' frameborder='0'></iframe>"
       },
       {
         "title": "吃了吗您哪？",
         "titleEnglish": "Have You Eaten?",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/吃了吗您哪",
+        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/吃了吗您哪？",
         "width": 600,
         "height": 933,
         "intro": "老北京人和熟人说话的时候喜欢用“您哪”结尾",
         "introEnglish": "Old Beijingers like to end sentences with 您哪 (nín na) when talking to acquaintances.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/吃了吗您哪' style='width:600px; height:933px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/吃了吗您哪？' style='width:600px; height:933px;' frameborder='0'></iframe>"
       },
       {
         "title": "“吃了吗您哪”的联想",
         "titleEnglish": "Associations with Have You Eaten ? ",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/吃了吗您哪的联想",
+        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/“吃了吗您哪”的联想",
         "width": 600,
         "height": 1181,
         "intro": "一勺一筷子，一点一滴地注入到脑子里，潜移默化，想忘记都不容易",
         "introEnglish": "Spoon by spoon, chopstick by chopstick, bit by bit instilled into the mind, subtly influencing, hard to forget.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/吃了吗您哪的联想' style='width:600px; height:1181px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/“吃了吗您哪”的联想' style='width:600px; height:1181px;' frameborder='0'></iframe>"
       },
       {
         "title": "代沟种种",
@@ -1853,23 +1886,23 @@ export class AllPosts {
         "title": "口音",
         "titleEnglish": "Accent",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/口音-1",
+        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/口音",
         "width": 600,
         "height": 1609,
         "intro": "瞧见没有，殊途同归，异曲同工，甭管在哪，口音对交流都很有影响",
         "introEnglish": "See? Different paths, same destination, equally effective; no matter where, accent has a big impact on communication.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/口音-1' style='width:600px; height:1609px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/口音' style='width:600px; height:1609px;' frameborder='0'></iframe>"
       },
       {
         "title": "口音（续）",
         "titleEnglish": "Accent (Cont.)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/口音-2",
+        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/口音（续）",
         "width": 600,
         "height": 1585,
         "intro": "瞧见没有，用不同的口音说话会有不同的交流效果",
         "introEnglish": "See? Speaking with different accents can lead to different communication effects.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/口音-2' style='width:600px; height:1585px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/口音（续）' style='width:600px; height:1585px;' frameborder='0'></iframe>"
       },
       {
         "title": "裸猴",
@@ -1963,12 +1996,12 @@ export class AllPosts {
         "title": "两难，悲剧的摇篮",
         "titleEnglish": "Dilemma, Cradle of Tragedy",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/两难–悲剧的摇篮",
+        "src": "https://youpingh.github.io/blogger/#afanti1/偶有一得/两难，悲剧的摇篮",
         "width": 600,
         "height": 1360,
         "intro": "“要是哪天你妈和我同时掉水里了，你先救谁？”完美无缺的两难处境",
         "introEnglish": "If your mom and I both fell into the water, who would you save first ?  A perfect, flawless dilemma.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/两难–悲剧的摇篮' style='width:600px; height:1360px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/偶有一得/两难，悲剧的摇篮' style='width:600px; height:1360px;' frameborder='0'></iframe>"
       },
       {
         "title": "数学老师的无奈",
@@ -2062,12 +2095,12 @@ export class AllPosts {
         "title": "九五花絮（1）",
         "titleEnglish": "Ninth-Fifth Bloopers (1)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/朝九晚五/九五花絮-1",
+        "src": "https://youpingh.github.io/blogger/#afanti1/朝九晚五/九五花絮（1）",
         "width": 600,
         "height": 1003,
         "intro": "同事不加思索地回答道：“因为她知道他永远都不会伤她的心”",
         "introEnglish": "My colleague answered without hesitation: Because she knew he would never hurt her heart.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/朝九晚五/九五花絮-1' style='width:600px; height:1003px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/朝九晚五/九五花絮（1）' style='width:600px; height:1003px;' frameborder='0'></iframe>"
       },
       {
         "title": "居安思危",
@@ -2117,12 +2150,12 @@ export class AllPosts {
         "title": "九五花絮（2）",
         "titleEnglish": "Ninth-Fifth Bloopers (2)",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/朝九晚五/九五花絮-2",
+        "src": "https://youpingh.github.io/blogger/#afanti1/朝九晚五/九五花絮（2）",
         "width": 600,
         "height": 1263,
         "intro": "分手时那位律师笑着对他说了句：“小伙子，精神可嘉!”",
         "introEnglish": "When they parted ways, the lawyer smiled and said to him: Young man, nice try!",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/朝九晚五/九五花絮-2' style='width:600px; height:1263px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/朝九晚五/九五花絮（2）' style='width:600px; height:1263px;' frameborder='0'></iframe>"
       },
       {
         "title": "码字儿",
@@ -2227,12 +2260,12 @@ export class AllPosts {
         "title": "开会・菜单・诗",
         "titleEnglish": "Meetings, Menus, Poetry",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti1/码字练习/开会·菜单·诗",
+        "src": "https://youpingh.github.io/blogger/#afanti1/码字练习/开会・菜单・诗",
         "width": 600,
         "height": 1885,
         "intro": "会场里，男的抽烟，女的打毛活，小青工们在那招猫斗狗，打情骂俏",
         "introEnglish": "In the meeting room, men smoked, women knitted, young apprentices flirted and fooled around.",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/码字练习/开会·菜单·诗' style='width:600px; height:1885px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti1/码字练习/开会・菜单・诗' style='width:600px; height:1885px;' frameborder='0'></iframe>"
       },
       {
         "title": "我半岁",

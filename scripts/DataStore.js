@@ -23,13 +23,13 @@ export class DataStore {
     // The firebase configuration. the apiKey is an id of the project, not a securit key, 
     // so it's okay to check in the code.
     this.firebaseConfig = {
-      apiKey: "AIzaSyClRfxf9Fa6vtgWZnvUJFiZTDYoOZlzzW0",
-      authDomain: "pingeter-blogger.firebaseapp.com",
-      projectId: "pingeter-blogger",
-      storageBucket: "pingeter-blogger.firebasestorage.app",
-      messagingSenderId: "1041397028813",
-      appId: "1:1041397028813:web:ee065d4499b7a522091684",
-      measurementId: "G-SV3PZ23CTE"
+      apiKey: "AIzaSyDjFOn3ls8rqd_LVEl3wkHWL4SX6XGoVc4",
+      authDomain: "pingster-db.firebaseapp.com",
+      projectId: "pingster-db",
+      storageBucket: "pingster-db.firebasestorage.app",
+      messagingSenderId: "318746586861",
+      appId: "1:318746586861:web:8b37ad3a7563af122726e4",
+      measurementId: "G-7BW30WBR65"
     };
 
     // Initialize the app to access the database
