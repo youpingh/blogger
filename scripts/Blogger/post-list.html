@@ -1,143 +1,206 @@
 <!doctype html>
-<html>
 
-<head>
-	<script type="text/javascript">
 
-		var labelItems = []; // {id, posts[]}
 
-		function postList(json) {
-			if (json.feed.hasOwnProperty('entry')) {
-				var label = json.feed.entry[0].category[0].term.toString();
-				var labelItem = createLabelItem(label, json);
-				var numItems = labelItem.posts.length;
-				this.labelItems.push(labelItem);
+<script type="text/javascript">
 
-				if (label == '开卷有益') {
-					document.write('<p style="font-family:KaiTi; font-weight:bold; color: brown;">那前儿 (2009 - 2011)</p>');
-				}
-				if (label == '字里行间') {
-					document.write('<p style="font-family:KaiTi; font-weight:bold; color: brown;">眼下 (2020 - )</p>');
-				}
-				var func = "showPostLabels('" + label + "')";
-				var pid = "p-" + label;
-				document.write('<p id="' + pid + '" title="Click to expand/hide" onclick="' + func +
-					'" style="font-family:SimSun; font-weight:bold; color: rgb(77, 77, 77);">+ ' +
-					label + '(' + numItems + ')</p>');
-				document.write('<ul id="' + label + '" style="font-family:SimSun; font-size:10px; padding-left: 20px;"></ul>');
-				if (label == '字里行间' || label == '林林总总') {
-					showPostLabels(label);
-				}
-			}
+	//  An array of { isCurrent: true, label: '', posts: [] } for displaying a post list
+	const labelItems = [];
+	const postEntries = [];
+	const newBloggerYear = 2020;
+	const maxPosts = 150;
+
+	/**
+	 * The main function to build a post list of each label and shows the list of the current label.
+	 */
+	function postList(json) {
+
+		// get the current postId for setting its label as the current label
+		postId = document.querySelector("[itemprop='postId']");
+		if (postId) {
+			postId = postId.getAttribute("content");
+		} else {
+			postId = '';
 		}
 
-		/**
-		 * Creates a label item list (id: label, posts[])
-		 */
-		function createLabelItem(label, json) {
-			var posts = [];
-			var entryUrl, entryTitle, item;
-			// for (var i = 0; i < json.feed.entry.length; i++) {
-			for (var i = json.feed.entry.length - 1; i >= 0; i--) {
-				for (var j = 0; j < json.feed.entry[i].link.length; j++) {
-					if (json.feed.entry[i].link[j].rel == 'alternate') {
-						break;
+		const entries = json.feed.entry.length;
+		postEntries.push(...json.feed.entry);
+
+		// Check if the number of posts returned is less than the max-results requested.
+		// If it is, we've reached the end of the post list.
+		if (entries == maxPosts) {
+			return;
+		}
+
+		// build the label post list
+		let currentLabel = buildPostList(postId);
+		// console.log('label, postId:' + currentLabel + ', ' + postId);
+
+		if (currentLabel.length == 0) {
+			labelItems.isCurrent = true;
+			currentLabel = labelItems[0].label;
+		}
+		showLabelPosts(currentLabel);
+	}
+
+	/**
+	 * Builds a labelItem list {isCurrent, label, date, posts[]} from the json object
+	 */
+	function buildPostList(postId) {
+		let posts = [];
+		let entry, entryUrl, entryLabel, entryTitle, entryPostId, entryDate, linkItem, labelItem;
+		let currentLabel = '';
+
+		// find all posts and their matching labels
+		// sort ascendingly by the creating date of posts
+		for (let i = 0; i < postEntries.length; i++) {
+			entry = postEntries[i];
+			for (let j = 0; j < entry.link.length; j++) {
+				if (entry.link[j].rel == 'alternate') {
+					for (let k = 0; k < entry.category.length; k++) {
+						entryLabel = entry.category[k].term.toString();
+						entryUrl = entry.link[j].href;
+						entryTitle = entry.title.$t;
+						entryDate = new Date(entry.published.$t);
+						linkItem = document.createElement('A');
+						linkItem.href = entryUrl;
+						linkItem.textContent = entryTitle;
+						linkItem.className = 'link';
+						// console.log('title:' + entryTitle);
+
+						// if the labelItem exists, add a the post to it, otherwise create a new one.
+						entryPostId = entry.id.$t.toString();
+						labelItem = labelItems.find(item => item.label === entryLabel);
+						if (labelItem === undefined) {
+							labelItem = { isCurrent: false, label: entryLabel, date: entryDate, posts: [] }
+							labelItems.push(labelItem);
+						}
+
+						// set the label of the current post as the current label
+						labelItem.isCurrent = (postId.length > 0 && entryPostId.endsWith(postId));
+						if (labelItem.isCurrent) {
+							currentLabel = entryLabel;
+						}
+						labelItem.posts.push(linkItem);
 					}
 				}
-				entryUrl = "'" + json.feed.entry[i].link[j].href + "'";
-				entryTitle = json.feed.entry[i].title.$t;
-				item = "<a style='text-decoration: none;' href=" + entryUrl + '>' + entryTitle + "</a>";
-				posts.push(item);
 			}
-			var labelItem = { id: label, posts: posts };
-			return labelItem;
 		}
 
-		/**
-		 * Shows or hides the posts for the specified lable
-		 */
-		function showPostLabels(label) {
-			var p, pcode, pid, ul, li, liList;
-			pid = 'p-' + label;
-			p = document.getElementById(pid);
-			pcode = p.innerHTML;
-			ul = document.getElementById(label);
-			liList = ul.getElementsByTagName("li");
-			if (liList.length > 0) {
-				pcode = pcode.replace('- ', '+ ');
-				p.innerHTML = pcode;
-				ul.innerHTML = '';
-				return;
-			}
+		buildLabelElements('label-list1', 1);
+		buildLabelElements('label-list2', 2);
+		return currentLabel;
+	}
 
-			ul.innerHTML = '';
-			var labelItem = this.labelItems.find(item => item.id === label);
-			for (var i = labelItem.posts.length - 1; i >= 0; i--) {
-				pcode = pcode.replace('+ ', '- ');
-				p.innerHTML = pcode;
-				li = document.createElement("li");
-				li.innerHTML = labelItem.posts[i];
+	// build HTML elements for labels and their posts
+	function buildLabelElements(elementId, version) {
+		let label, p, ul, li, bloggerYear, labelItem, items;
+		let div = document.getElementById(elementId);
+		switch (version) {
+			case 1:
+				items = labelItems.filter(item => item.date.getFullYear() >= newBloggerYear);
+				break;
+			case 2:
+				items = labelItems.filter(item => item.date.getFullYear() < newBloggerYear);
+				break;
+		}
+
+		for (let i = 0; i < items.length; i++) {
+			labelItem = items[i];
+			label = labelItem.label;
+			// create a P element as the label title
+			p = document.createElement('p');
+			p.id = 'p-' + label;
+			p.dataset.name = label;
+			p.title = 'Click to expand/hide';
+			p.className = 'label-title';
+			p.textContent = '+ ' + label + ' (' + labelItem.posts.length + ')';
+			p.onclick = function () { showLabelPosts(this.dataset.name); };
+
+			// create a UL element and a list of LI elements for the post list
+			ul = document.createElement('ul');
+			ul.id = 'ul-' + label;
+			ul.className = 'post-title';
+			ul.style.display = 'none';
+			for (let j = (labelItem.posts.length - 1); j >= 0; j--) {
+				li = document.createElement('li');
+				li.appendChild(labelItem.posts[j]);
 				ul.appendChild(li);
 			}
+			div.appendChild(p);
+			div.appendChild(ul);
 		}
+	}
+
+	/**
+	 * Shows or hides the posts for the specified lable
+	 */
+	function showLabelPosts(label) {
+		if (label.length > 0) {
+			let pid = 'p-' + label;
+			let ulId = 'ul-' + label;
+			let p = document.getElementById(pid);
+			let ul = document.getElementById(ulId);
+			let display = ul.style.display;
+			if (display == 'block') {
+				ul.style.display = 'none';
+				p.textContent = p.textContent.replace('- ', '+ ');
+			} else {
+				ul.style.display = 'block';
+				p.textContent = p.textContent.replace('+ ', '- ');
+			}
+		}
+	}
+</script>
+<style>
+	p.blog-title {
+		font-family: KaiTi;
+		font-weight: bold;
+		color: brown;
+	}
+
+	p.label-title {
+		font-family: SimSun;
+		font-weight: bold;
+		color: rgb(77, 77, 77);
+	}
+
+	ul.post-title {
+		font-family: SimSun;
+		font-size: 10px;
+		padding-left: 20px;
+		display: none;
+	}
+
+	a.link {
+		text-decoration: none;
+	}
+
+	a:hover {
+		background-color: yellow;
+	}
+</style>
+
+
+
+<div id="label-list1">
+	<p class="blog-title">眼下 (2020 - )</p>
+	<p id="" title="Click to expand/hide" class="label-title"></p>
+	<ul id="" class="post-title"></ul>
+</div>
+
+<div id="label-list2">
+	<p class="blog-title">那前儿 (2009 - 2011)</p>
+	<p id="" title="Click to expand/hide" class="label-title"></p>
+	<ul id="" class="post-title"></ul>
+</div>
+
+<script type="text/javascript"
+	src="https://huyandi.blogspot.com/feeds/posts/summary?max-results=150&start-index=1&alt=json-in-script&orderby=published&callback=postList">
 	</script>
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/字里行间?max-results=50&alt=json-in-script&callback=postList">
-		</script>
 
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/林林总总?max-results=30&alt=json-in-script&callback=postList">
-		</script>
+<script type="text/javascript"
+	src="https://huyandi.blogspot.com/feeds/posts/summary?max-results=150&start-index=151&alt=json-in-script&orderby=published&callback=postList">
+	</script>
 
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/嬉笑怒骂?max-results=20&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/道听途说?max-results=20&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/横竖撇捺?max-results=15&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/卸甲归田?max-results=10&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/开卷有益?max-results=50&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/偶有一得?max-results=50&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/朝九晚五?max-results=20&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/弦外之音?max-results=20&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/行万里路?max-results=20&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/陈年往事?max-results=15&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/闲听百家?max-results=15&alt=json-in-script&callback=postList">
-		</script>
-
-	<script type="text/javascript"
-		src="https://huyandi.blogspot.com/feeds/posts/summary/-/码字练习?max-results=15&alt=json-in-script&callback=postList">
-		</script>
-
-
-</head>
-
-</html>
+</!doctype>
