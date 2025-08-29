@@ -404,9 +404,20 @@ export class AllPosts {
         "src": "https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-1",
         "width": 600,
         "height": 1310,
-        "intro": "群里聊天，不免会有些不着调的小作文。",
+        "intro": "神枪，河边无情草",
         "introEnglish": "",
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-1' style='width:600px; height:1250px;' frameborder='0'></iframe>"
+      },
+      {
+        "title": "小作文-2",
+        "titleEnglish": "Essay-1",
+        "show": true,
+        "src": "https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-2",
+        "width": 600,
+        "height": 1310,
+        "intro": "忆旧，反智",
+        "introEnglish": "",
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-2' style='width:600px; height:1250px;' frameborder='0'></iframe>"
       },
       {
         "title": "路边的洋娃娃",
