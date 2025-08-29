@@ -410,14 +410,14 @@ export class AllPosts {
       },
       {
         "title": "小作文-2",
-        "titleEnglish": "Essay-1",
+        "titleEnglish": "Essay-2",
         "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-2",
         "width": 600,
-        "height": 1310,
+        "height": 1320,
         "intro": "忆旧，反智",
         "introEnglish": "",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-2' style='width:600px; height:1250px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-2' style='width:600px; height:1280px;' frameborder='0'></iframe>"
       },
       {
         "title": "路边的洋娃娃",
