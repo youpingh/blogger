@@ -233,6 +233,17 @@ export class AllPosts {
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/字里行间/读《纳粹猎人》' style='width:600px; height:2077px;' frameborder='0'></iframe>"
       },
       {
+        "title": "为什么要相信达尔文",
+        "titleEnglish": "Why Evolution is True",
+        "show": true,
+        "src": "https://youpingh.github.io/blogger/#afanti2/字里行间/为什么要相信达尔文",
+        "width": 600,
+        "height": 2077,
+        "intro": "这本《为什么要相信达尔文》也不是本容易读的科普",
+        "introEnglish": "Why Evolution is True",
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/字里行间/为什么要相信达尔文' style='width:600px; height:2077px;' frameborder='0'></iframe>"
+      },
+      {
         "title": "川普怼",
         "titleEnglish": "Trump's Comeback",
         "show": true,
