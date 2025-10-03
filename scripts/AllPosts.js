@@ -238,7 +238,7 @@ export class AllPosts {
         "show": true,
         "src": "https://youpingh.github.io/blogger/#afanti2/字里行间/为什么要相信达尔文",
         "width": 600,
-        "height": 2077,
+        "height": 1200,
         "intro": "这本《为什么要相信达尔文》也不是本容易读的科普",
         "introEnglish": "Why Evolution is True",
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/字里行间/为什么要相信达尔文' style='width:600px; height:2077px;' frameborder='0'></iframe>"
@@ -431,15 +431,15 @@ export class AllPosts {
         "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-2' style='width:600px; height:1280px;' frameborder='0'></iframe>"
       },
       {
-        "title": "小作文-3",
-        "titleEnglish": "Essay-3",
+        "title": "鸟儿问答",
+        "titleEnglish": "Conversations with a Bird",
         "show": true,
-        "src": "https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-3",
+        "src": "https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/鸟儿问答",
         "width": 600,
         "height": 1320,
         "intro": "鸟儿问答",
         "introEnglish": "",
-        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/小作文-3' style='width:600px; height:1280px;' frameborder='0'></iframe>"
+        "iframe": "<iframe src='https://youpingh.github.io/blogger/#afanti2/嬉笑怒骂/鸟儿问答' style='width:600px; height:1280px;' frameborder='0'></iframe>"
       },
       {
         "title": "路边的洋娃娃",
