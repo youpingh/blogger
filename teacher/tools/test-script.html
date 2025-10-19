@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Test JavaScript</title>
+	<script type="text/javascript">
+		let pid = "voice";
+		/**
+		 * The main function to build a post list of each label and shows the list of the current label.
+		 */
+		function sayIt(text, voiceType) {
+			let p = document.getElementById(pid);
+			p.textContent = 'It says ' + text;
+		}
+	</script>
+	<style>
+		p.label {
+			font-family: SimSun;
+			font-size: 36px;
+			font-weight: bold;
+			color: brown;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<div>
+			<p>Say It</p>
+			<ul>
+				<li onclick="sayIt('你', 'type1')">你</li>
+				<li onclick="sayIt('我', 'type1')">我</li>
+				<li onclick="sayIt('她', 'type1')">她</li>
+				<li onclick="sayIt('他', 'type1')">他</li>
+			</ul>
+
+			<p id="voice" class="label"></p>
+		</div>
+	</div>
+</body>
+
+</html>

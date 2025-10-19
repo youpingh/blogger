@@ -40,6 +40,7 @@ body {
 .sidebar-label {
     font-family: SimSun;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .sidebar-post {
@@ -123,6 +124,15 @@ body {
     color: rgb(2, 130, 150)
 }
 
+.author {
+    font-size: 14px;
+    font-family: SimSun;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    text-indent: 0px;
+}
+
 .english-color {
     color: brown;
 }
@@ -176,6 +186,12 @@ img.index {
 .note {
     color: grey;
     font-size: 12px;
+}
+
+.index {
+    margin-top: 24px;
+    text-indent: 0px;
+    text-align: center;
 }
 
 .date-title {
@@ -237,6 +253,10 @@ span.quote {
     display: block;
     margin: 6px auto 20px auto;
     border: 0px;
+}
+
+p.center {
+    text-align: center;
 }
 
 ol.list {

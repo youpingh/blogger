@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+
+<head>
+	<script type="text/javascript">
+
+		//  An array of { isCurrent: true, label: '', posts: [] } for displaying a post list
+		const labelItems = [];
+
+		/**
+		 * The main function to build a post list of each label and shows the list of the current label.
+		 */
+		function postList(json) {
+
+			// get the current postId for setting its label as the current label
+			postId = document.querySelector("[itemprop='postId']");
+			if (postId) {
+				postId = postId.getAttribute("content");
+			} else {
+				postId = '';
+			}
+
+			// build the label post list
+			let currentLabel = buildPostList(postId, json);
+			// console.log('label, postId:' + currentLabel + ', ' + postId);
+
+			if (currentLabel.length == 0) {
+				labelItems.isCurrent = true;
+				currentLabel = labelItems[0].label;
+			}
+			showLabelPosts(currentLabel);
+		}
+
+		/**
+		 * Builds a labelItem list {isCurrent, label, posts[]} from the json object
+		 */
+		function buildPostList(postId, json) {
+			let posts = [];
+			let entryUrl, entryLabel, entryTitle, entryPostId, linkItem, labelItem;
+			let currentLabel = '';
+
+			// find all posts and their matching labels
+			// sort descendingly by the creating date of posts
+			for (let i = json.feed.entry.length - 1; i >= 0; i--) {
+				for (let j = 0; j < json.feed.entry[i].link.length; j++) {
+					if (json.feed.entry[i].link[j].rel == 'alternate') {
+						for (let k = 0; k < json.feed.entry[i].category.length; k++) {
+							entryLabel = json.feed.entry[i].category[k].term.toString();
+							entryUrl = json.feed.entry[i].link[j].href;
+							entryTitle = json.feed.entry[i].title.$t;
+							linkItem = document.createElement('A');
+							linkItem.href = entryUrl;
+							linkItem.textContent = entryTitle;
+							linkItem.className = 'link';
+
+							// if the labelItem exists, add a the post to it, otherwise create a new one.
+							entryPostId = json.feed.entry[i].id.$t.toString();
+							labelItem = labelItems.find(item => item.label === entryLabel);
+							if (labelItem === undefined) {
+								labelItem = { isCurrent: false, label: entryLabel, posts: [] }
+								labelItems.push(labelItem);
+							}
+
+							// set the label of the current post as the current label
+							labelItem.isCurrent = (postId.length > 0 && entryPostId.endsWith(postId));
+							if (labelItem.isCurrent) {
+								currentLabel = entryLabel;
+							}
+							labelItem.posts.push(linkItem);
+						}
+					}
+				}
+			}
+
+			// build HTML elements for labels and their posts
+			let label, p, ul, li;
+			let div = document.getElementById('label-list');
+			div.innerHTML = '';
+			for (let i = 0; i < labelItems.length; i++) {
+				labelItem = labelItems[i];
+				label = labelItem.label;
+				// create a P element as the label title
+				p = document.createElement('p');
+				p.id = 'p-' + label;
+				p.dataset.name = label;
+				p.title = 'Click to expand/hide';
+				p.className = 'label-title';
+				p.textContent = '+ ' + label;
+				p.onclick = function () { showLabelPosts(this.dataset.name); };
+
+				// create a UL element and a list of LI elements for the post list
+				ul = document.createElement('ul');
+				ul.id = 'ul-' + label;
+				ul.className = 'post-title';
+				ul.style.display = 'none';
+				for (let j = 0; j < labelItem.posts.length; j++) {
+					li = document.createElement('li');
+					li.appendChild(labelItem.posts[j]);
+					ul.appendChild(li);
+				}
+				div.appendChild(p);
+				div.appendChild(ul);
+			}
+			// console.log(div.innerHTML);
+			return currentLabel;
+		}
+
+		/**
+		 * Shows or hides the posts for the specified lable
+		 */
+		function showLabelPosts(label) {
+			if (label.length > 0) {
+				let pid = 'p-' + label;
+				let ulId = 'ul-' + label;
+				let p = document.getElementById(pid);
+				let ul = document.getElementById(ulId);
+				let display = ul.style.display;
+				if (display == 'block') {
+					ul.style.display = 'none';
+					p.textContent = '+ ' + label;
+				} else {
+					ul.style.display = 'block';
+					p.textContent = '- ' + label;
+				}
+			}
+		}
+	</script>
+	<style>
+		p.label-title {
+			font-family: SimSun;
+			font-weight: bold;
+			color: rgb(77, 77, 77);
+		}
+
+		ul.post-title {
+			font-family: SimSun;
+			font-size: 10px;
+			padding-left: 20px;
+			display: none;
+		}
+
+		a.link {
+			text-decoration: none;
+		}
+
+		a:hover {
+			background-color: yellow;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="label-list">
+		<p id="" title="Click to expand/hide" class="label-title"></p>
+		<ul id="" class="post-title"></ul>
+	</div>
+
+	<script type="text/javascript"
+		src="https://gwca-laohu.blogspot.com/feeds/posts/summary?max-results=100&alt=json-in-script&callback=postList">
+		</script>
+</body>
+
+</html>

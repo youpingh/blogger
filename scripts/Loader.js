@@ -2,6 +2,7 @@
 import { AppUtils } from './AppUtils.js';
 import { Sidebar } from './Sidebar.js';
 import { DataStore } from './DataStore.js';
+import { AllPosts } from './AllPosts.js';
 
 /**
  * This is loader utility to load a content page based on the value of the window.location.hash.
@@ -29,21 +30,18 @@ export class Loader {
     const loader = Loader.getInstance();
 
     // the full window.location.hash looks like this #blogger/label/title
-    const pageName = (window.location.hash.replace("#", "") || 'htmls/home') + '.html';
+    const pageName = (window.location.hash.replace("#", "") || 'htmls/home');
+    const decodedName = decodeURIComponent(pageName.trim());
     const elementId = 'page-content';
     // let page = document.getElementById('page-content');
     // let footer = document.getElementById('page-footer');
 
-    await loader.loadHTML(pageName, elementId);
+    await loader.loadHTML(decodedName + '.html', elementId);
     AppUtils.adjustPage();
     AppUtils.showCodeGenerator();
 
-    const hash = window.location.hash;
-    if ((hash.length == 0 || hash.includes('home')) || (window.performance &&
-      window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD)) {
-      Sidebar.createTOCs(false);
-      // Sidebar.printPostTitles();
-    }
+    Sidebar.createTOCs();
+    // Sidebar.printPostTitles();
   }
 
   async loadHTML(pageName, elementId) {

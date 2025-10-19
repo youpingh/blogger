@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+	<!-- <title>label list</title> DEPRACATED use label-list.html instead -->
+	<script type="text/javascript">
+
+		var labelItems = []; // {id, posts[]}
+
+		function postList(json) {
+			if (json.feed.hasOwnProperty('entry')) {
+				var label = json.feed.entry[0].category[0].term.toString();
+				var labelItem = createLabelItem(label, json);
+				var numItems = labelItem.posts.length;
+				this.labelItems.push(labelItem);
+
+				var func = "showPostLabels('" + label + "')";
+				var pid = "p-" + label;
+				document.write('<p id="' + pid + '" title="Click to expand/hide" onclick="' + func +
+					'" style="font-family:SimSun; font-weight:bold; color: darkgray;">+ ' +
+					label + '(' + numItems + ')</p>');
+				document.write('<ul id="' + label + '" style="font-family:SimSun; font-size:10px; padding-left: 20px;"></ul>');
+				if (label == '课堂花絮' || label == '教学点滴' || label == '班里那些事' || label == 'events') {
+					showPostLabels(label);
+				}
+			}
+		}
+
+		/**
+		 * Creates a label item list (id: label, posts[])
+		 */
+		function createLabelItem(label, json) {
+			var posts = [];
+			var entryUrl, entryTitle, post;
+			if (label == '班里那些事') {
+				for (var i = 0; i < json.feed.entry.length; i++) {
+					post = getPost(json.feed.entry[i]);
+					posts.push(post);
+				}
+			} else {
+				for (var i = json.feed.entry.length - 1; i >= 0; i--) {
+					post = getPost(json.feed.entry[i]);
+					posts.push(post);
+				}
+			}
+			var labelItem = { id: label, posts: posts };
+			return labelItem;
+		}
+
+		/**
+		 * Gets a post's information
+		 */
+		function getPost(entry) {
+			for (var j = 0; j < entry.link.length; j++) {
+				if (entry.link[j].rel == 'alternate') {
+					break;
+				}
+			}
+			var entryUrl = "'" + entry.link[j].href + "'";
+			var entryTitle = entry.title.$t;
+			var post = "<a style='text-decoration: none;' href=" + entryUrl + '>' + entryTitle + "</a>";
+			return post;
+		}
+
+		/**
+		 * Shows or hides the posts for the specified lable
+		 */
+		function showPostLabels(label) {
+			var p, pcode, pid, ul, li, liList;
+			pid = 'p-' + label;
+			p = document.getElementById(pid);
+			pcode = p.innerHTML;
+			ul = document.getElementById(label);
+			liList = ul.getElementsByTagName("li");
+			if (liList.length > 0) {
+				pcode = pcode.replace('- ', '+ ');
+				p.innerHTML = pcode;
+				ul.innerHTML = '';
+				return;
+			}
+
+			ul.innerHTML = '';
+			var labelItem = this.labelItems.find(item => item.id === label);
+			for (var i = labelItem.posts.length - 1; i >= 0; i--) {
+				pcode = pcode.replace('+ ', '- ');
+				p.innerHTML = pcode;
+				li = document.createElement("li");
+				li.innerHTML = labelItem.posts[i];
+				ul.appendChild(li);
+			}
+		}
+	</script>
+	<script type="text/javascript"
+		src="https://gwca-events.blogspot.com/feeds/posts/summary/-/events?max-results=30&alt=json-in-script&callback=postList">
+		</script>
+
+	<!-- <script type="text/javascript"
+		src="https://gwca-laohu.blogspot.com/feeds/posts/summary/-/教学点滴?max-results=30&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://gwca-laohu.blogspot.com/feeds/posts/summary/-/课堂花絮?max-results=30&alt=json-in-script&callback=postList">
+		</script>
+	<script type="text/javascript"
+		src="https://gwca-laohu.blogspot.com/feeds/posts/summary/-/班里那些事?max-results=20&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://gwca-laohu.blogspot.com/feeds/posts/summary/-/学生作文选?max-results=20&alt=json-in-script&callback=postList">
+		</script>
+
+	<script type="text/javascript"
+		src="https://gwca-laohu.blogspot.com/feeds/posts/summary/-/范文?max-results=10&alt=json-in-script&callback=postList">
+		</script> -->
+
+</head>
+
+</html>
