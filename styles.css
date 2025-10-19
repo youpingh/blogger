@@ -202,7 +202,15 @@ img.index {
 
 .quote {
     font-family: SimSun;
-    font-size: 14px;
+    font-size:16px;
+    color:blue;
+}
+
+ol.quote {
+    font-family: SimSun;
+    font-size:16px;
+    color:blue;
+    list-style-type: none;
 }
 
 .latin {
@@ -222,12 +230,6 @@ img.index {
 
 .link {
     font-size: 10px;
-}
-
-span.quote {
-    font-family: SimSun;
-    font-size: 16px;
-    color: blue;
 }
 
 .tile-date {
