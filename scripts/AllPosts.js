@@ -1097,6 +1097,12 @@ export class AllPosts {
                     "show": true,
                     "intro": "躺着都能中枪，真是那么回事",
                     "introEnglish": "Getting shot while lying down, it's truly like that.",
+                  }, {
+                    "title": "双刃剑",
+                    "titleEnglish": "Double Edged Sword",
+                    "show": true,
+                    "intro": "AI 是把双刃剑，真得留点儿神",
+                    "introEnglish": "AI is a double-edged sword; you really have to be careful..",
                   },
                 ]
             },
@@ -1471,6 +1477,12 @@ export class AllPosts {
                     "show": true,
                     "intro": ". 2025-09",
                     "introEnglish": "2025-09",
+                  }, {
+                    "title": "2025-10",
+                    "titleEnglish": "2025-10",
+                    "show": true,
+                    "intro": ". 2025-10",
+                    "introEnglish": "2025-10",
                   },
                 ]
             },
