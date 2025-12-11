@@ -1735,6 +1735,13 @@ export class AllPosts {
                     "intro": "",
                     "introEnglish": "",
                   },
+                  {
+                    "title": "语音练习",
+                    "titleEnglish": "",
+                    "show": true,
+                    "intro": "",
+                    "introEnglish": "",
+                  },
                 ]
             },
             {
