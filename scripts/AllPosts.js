@@ -1213,6 +1213,12 @@ export class AllPosts {
                     "show": true,
                     "intro": "这回是个小子，而且这回我没捧着",
                     "introEnglish": "This time it's a boy, and this time I wasn't holding.",
+                  }, {
+                    "title": "年末",
+                    "titleEnglish": "Year End",
+                    "show": true,
+                    "intro": "2026，美国平安",
+                    "introEnglish": "2026, Be Safe, America.",
                   },
                 ]
             },
@@ -1737,6 +1743,13 @@ export class AllPosts {
                   },
                   {
                     "title": "语音练习",
+                    "titleEnglish": "",
+                    "show": true,
+                    "intro": "",
+                    "introEnglish": "",
+                  },
+                  {
+                    "title": "影子跟读",
                     "titleEnglish": "",
                     "show": true,
                     "intro": "",
