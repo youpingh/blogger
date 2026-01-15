@@ -1212,7 +1212,7 @@ export class AllPosts {
                     "titleEnglish": "Holding",
                     "show": true,
                     "intro": "这回是个小子，而且这回我没捧着",
-                    "introEnglish": "This time it's a boy, and this time I wasn't holding.",
+                    "introEnglish": "This time it's a boy, and this time I wasn't holding with two hands.",
                   }, {
                     "title": "年末",
                     "titleEnglish": "Year End",
