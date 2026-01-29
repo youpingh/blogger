@@ -913,6 +913,12 @@ export class AllPosts {
                     "show": true,
                     "intro": "顺手拿起一本就看下去了，看到一半，又另外拿起一本",
                     "introEnglish": "Picked up a book and started reading, half way of it, picked up another.",
+                  }, {
+                    "title": "亲爱的图书馆",
+                    "titleEnglish": "The Library Book",
+                    "show": true,
+                    "intro": "对很多人来说，“图书馆”是个带感情色彩、能引起很多回忆的词",
+                    "introEnglish": "For many people, 'library' is an evocative term that brings back a flood of memories.",
                   },
                 ]
             },
