@@ -920,6 +920,13 @@ export class AllPosts {
                     "intro": "对很多人来说，“图书馆”是个带感情色彩、能引起很多回忆的词",
                     "introEnglish": "For many people, 'library' is an evocative term that brings back a flood of memories.",
                   },
+                  {
+                    "title": "读《智人之上》",
+                    "titleEnglish": "Nexus",
+                    "show": true,
+                    "intro": "人工智能都会变成一只无比烫手的山芋，拿着、捧着、捏着、攥着都不是",
+                    "introEnglish": "Nexus: A Brief History of Information Networks from the Stone Age to AI.",
+                  },
                 ]
             },
             {
