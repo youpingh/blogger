@@ -927,6 +927,13 @@ export class AllPosts {
                     "intro": "人工智能都会变成一只无比烫手的山芋，拿着、捧着、捏着、攥着都不是",
                     "introEnglish": "Nexus: A Brief History of Information Networks from the Stone Age to AI.",
                   },
+                  {
+                    "title": "读《智人之上》点滴",
+                    "titleEnglish": "Nexus, Highlights",
+                    "show": true,
+                    "intro": "听谁的？",
+                    "introEnglish": "Who is telling the truth?",
+                  },
                 ]
             },
             {
