@@ -1781,6 +1781,13 @@ export class AllPosts {
                     "intro": "",
                     "introEnglish": "",
                   },
+                  {
+                    "title": "作文比赛",
+                    "titleEnglish": "",
+                    "show": true,
+                    "intro": "",
+                    "introEnglish": "",
+                  },
                 ]
             },
             {
