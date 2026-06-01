@@ -1788,6 +1788,13 @@ export class AllPosts {
                     "intro": "",
                     "introEnglish": "",
                   },
+                  {
+                    "title": "识字",
+                    "titleEnglish": "",
+                    "show": true,
+                    "intro": "",
+                    "introEnglish": "",
+                  },
                 ]
             },
             {
