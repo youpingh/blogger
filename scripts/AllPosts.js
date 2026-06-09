@@ -1055,6 +1055,12 @@ export class AllPosts {
                     "show": true,
                     "intro": "只有更次，满嘴跑舌头",
                     "introEnglish": "",
+                  }, {
+                    "title": "大雅之堂",
+                    "titleEnglish": "Fit for a sophisticated audience",
+                    "show": true,
+                    "intro": "一个马戏团的小丑突然出现在台前，十分卖力地插科打诨",
+                    "introEnglish": "A circus clown suddenly appeared at the front of the stage, putting great effort into his antics and banter.",
                   },
                 ]
             },
