@@ -1100,12 +1100,6 @@ export class AllPosts {
                     "intro": "可是这扳机一搂，就全成坏人了",
                     "introEnglish": "But once you pull that trigger, everyone becomes a bad person.",
                   }, {
-                    "title": "傻瓜机器人",
-                    "titleEnglish": "Dumb Robot",
-                    "show": true,
-                    "intro": "机器人一点都不傻，是你傻，特傻！",
-                    "introEnglish": "Robots aren't dumb at all; you're dumb, super dumb!",
-                  }, {
                     "title": "智者三虑",
                     "titleEnglish": "The Three Worries of the Wise",
                     "show": true,
@@ -1333,12 +1327,20 @@ export class AllPosts {
                     "show": true,
                     "intro": "存钱养老很重要，先得从有耐心等那第二颗棉花糖做起",
                     "introEnglish": "Saving for retirement is important; you first need to start by patiently waiting for that second marshmallow.",
-                  }, {
-                    "title": "又开工了",
-                    "titleEnglish": "Started Work Again",
+                  }
+                ]
+            },
+            {
+              "name": "傻瓜天地",
+              "show": true,
+              "posts":
+                [
+                  {
+                    "title": "傻瓜机器人",
+                    "titleEnglish": "Dumb Robot",
                     "show": true,
-                    "intro": "小孙女用她的小手不厌其烦地点屏幕上那个小喇叭，真有点儿意思",
-                    "introEnglish": "The granddaughter kept clicking the small speaker icon on the screen with her tiny hands, it was quite interesting.",
+                    "intro": "机器人一点都不傻，是你傻，特傻！",
+                    "introEnglish": "Robots aren't dumb at all; you're dumb, super dumb!",
                   }, {
                     "title": "开工日志",
                     "titleEnglish": "Work Log",
@@ -1346,6 +1348,20 @@ export class AllPosts {
                     "intro": "爷爷，咱们来玩那个“字儿”的游戏吧",
                     "introEnglish": "Grandpa, let's play that Character game.",
                   },
+                  {
+                    "title": "又开工了",
+                    "titleEnglish": "Started Work Again",
+                    "show": true,
+                    "intro": "小孙女用她的小手不厌其烦地点屏幕上那个小喇叭，真有点儿意思",
+                    "introEnglish": "The granddaughter kept clicking the small speaker icon on the screen with her tiny hands, it was quite interesting.",
+                  },
+                  {
+                    "title": "“时效”",
+                    "titleEnglish": "Started Work Again",
+                    "show": true,
+                    "intro": "两个预设，1 - 它永远顺着你说话 2 - 它基本上什么都知道",
+                    "introEnglish": "Two presets: 1 - It always agrees with you; 2 - It basically knows everything.",
+                  }
                 ]
             },
             {
