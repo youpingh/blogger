@@ -1123,12 +1123,6 @@ export class AllPosts {
                     "show": true,
                     "intro": "躺着都能中枪，真是那么回事",
                     "introEnglish": "Getting shot while lying down, it's truly like that.",
-                  }, {
-                    "title": "双刃剑",
-                    "titleEnglish": "Double Edged Sword",
-                    "show": true,
-                    "intro": "AI 是把双刃剑，真得留点儿神",
-                    "introEnglish": "AI is a double-edged sword; you really have to be careful..",
                   },
                 ]
             },
@@ -1354,6 +1348,12 @@ export class AllPosts {
                     "show": true,
                     "intro": "小孙女用她的小手不厌其烦地点屏幕上那个小喇叭，真有点儿意思",
                     "introEnglish": "The granddaughter kept clicking the small speaker icon on the screen with her tiny hands, it was quite interesting.",
+                  }, {
+                    "title": "双刃剑",
+                    "titleEnglish": "Double Edged Sword",
+                    "show": true,
+                    "intro": "AI 是把双刃剑，真得留点儿神",
+                    "introEnglish": "AI is a double-edged sword; you really have to be careful..",
                   },
                   {
                     "title": "“时效”",
