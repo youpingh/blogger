@@ -1123,7 +1123,13 @@ export class AllPosts {
                     "show": true,
                     "intro": "躺着都能中枪，真是那么回事",
                     "introEnglish": "Getting shot while lying down, it's truly like that.",
-                  },
+                  }, {
+                    "title": "文化教徒",
+                    "titleEnglish": "Cultural Devotee",
+                    "show": true,
+                    "intro": "可在这些文化佛教徒里，有些人“顿悟”了",
+                    "introEnglish": "Yet, among these 'cultural Buddhists,' some experienced 'sudden enlightenment",
+                  }
                 ]
             },
             {
