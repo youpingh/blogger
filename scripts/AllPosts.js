@@ -934,6 +934,13 @@ export class AllPosts {
                     "intro": "听谁的？",
                     "introEnglish": "Who is telling the truth?",
                   },
+                  {
+                    "title": "记性",
+                    "titleEnglish": "Memory",
+                    "show": true,
+                    "intro": "记忆的好坏不是天生的，是可以经过训练增强的",
+                    "introEnglish": "The quality of one’s memory is not innate; it can be strengthened through training.",
+                  },
                 ]
             },
             {
