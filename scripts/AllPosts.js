@@ -1252,6 +1252,12 @@ export class AllPosts {
                     "show": true,
                     "intro": "2026，美国平安",
                     "introEnglish": "2026, Be Safe, America.",
+                  }, {
+                    "title": "学而 ……",
+                    "titleEnglish": "Learn and ...",
+                    "show": true,
+                    "intro": "集中识字及其他",
+                    "introEnglish": "Learn and ...",
                   },
                 ]
             },
