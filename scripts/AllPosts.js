@@ -2047,9 +2047,10 @@ export class AllPosts {
   );
 
   static getBlogNames() {
-    return AllPosts.ALL_POSTS.map(blog => {
-      return blog.blogName;
-    });
+    // return AllPosts.ALL_POSTS.map(blog => {
+    //   return blog.blogName;
+    // });
+    return ['afanti2', 'afanti1', 'teacher'];
   }
 
   static getCategoryNames(blogName) {
