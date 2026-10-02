@@ -940,7 +940,13 @@ export class AllPosts {
                     "show": true,
                     "intro": "记忆的好坏不是天生的，是可以经过训练增强的",
                     "introEnglish": "The quality of one’s memory is not innate; it can be strengthened through training.",
-                  },
+                  }, {
+                    "title": "读书随笔-3",
+                    "titleEnglish": "Reading Notes 3",
+                    "show": true,
+                    "intro": "好长时间没看小说了，最近拿起来几本。",
+                    "introEnglish": "I hadn't read any novels for a long time, but I've picked up a few recently.",
+                  }, 
                 ]
             },
             {
