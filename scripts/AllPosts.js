@@ -1142,6 +1142,12 @@ export class AllPosts {
                     "show": true,
                     "intro": "可在这些文化佛教徒里，有些人“顿悟”了",
                     "introEnglish": "Yet, among these 'cultural Buddhists,' some experienced 'sudden enlightenment",
+                  }, {
+                    "title": "数学家的忧虑",
+                    "titleEnglish": "A Mathematician's Concerns",
+                    "show": true,
+                    "intro": "几乎就在一瞬间，人类把这几千年的积累全部交给了 AI",
+                    "introEnglish": "Almost in the blink of an eye, humanity handed over everything it had accumulated over thousands of years to AI.",
                   }
                 ]
             },
